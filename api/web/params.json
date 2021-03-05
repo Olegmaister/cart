@@ -1,0 +1,35 @@
+{
+  "avia": true,
+  "bulky": true,
+  "byCourier": true,
+  "calculationDescription": "string",
+  "cancelOrChange": true,
+  "consignment": {
+    "rangeFrom": 0,
+    "rangeTo": 5
+  },
+  "currencyCode": "string",
+  "currencyExchangeRate": 12,
+  "declaredPrice": 12,
+  "deliveryPrice": 23,
+  "directFlight": true,
+  "discounts": [
+    {
+      "description": "10000",
+      "rate": 3
+    }
+  ],
+  "fragile": false,
+  "height": 100,
+  "length": 100,
+  "packageType": "LETTER",
+  "rawDeliveryPrice": 12000,
+  "recipientCountryIso3166": "AT",
+  "recommended": true,
+  "transportType": "GROUND",
+  "validate": true,
+  "w2d": true,
+  "weight": 100,
+  "width": 100,
+  "withDeliveryNotification": true
+}

@@ -1,0 +1,81 @@
+.p-warrantly {
+	display: flex;
+	
+	@media (max-width: $tablet-md-sl) {
+		flex-direction: column;
+	}
+	
+	&-col {
+		width: 50%;
+		
+		@media (max-width: $tablet-md-sl) {
+			width: 100%;
+		}
+		
+		&--left {
+			overflow: hidden;
+			max-height: 240px;
+			padding-right: 20px;
+			@include hoverimages();
+			
+			@media (max-width: $tablet-md-sl) {
+				padding-right: 0;
+			}
+			
+		}
+		
+		&--right {
+			margin-top: 15px;
+		}
+
+	}
+	
+	&-row {
+		margin-bottom: 55px;
+		
+		@media (max-width: $tablet-md-sl) {
+			margin-bottom: 25px;
+		}
+		
+		&:last-child {
+			margin-bottom: 0;
+		}
+		
+	}
+	
+	&__title {
+		font-weight: 500;
+		font-size: 22px;
+		line-height: 147%;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: $black;
+		
+		@media (max-width: $tablet-md-sl) {
+			font-size: 18px;
+		}
+		
+	}
+	
+	&__desc {
+		font-family: $font-second;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 16px;
+		line-height: 147%;
+		text-align: justify;
+		color: $gray11;
+		
+		margin-top: 25px;
+		
+		@media (max-width: $tablet-md-sl) {
+			font-size: 14px;
+			margin-top: 15px;
+		}
+		
+	}
+	
+}
+.p-discount__desc {
+	text-align: justify;
+}

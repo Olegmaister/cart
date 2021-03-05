@@ -1,0 +1,74 @@
+/******* cat-prod-card */
+.cat-prod-card {
+	display: flex;
+	align-items: center;
+	background-color: $white;
+	height: 100%;
+
+	&:hover {
+		.cat-prod-card__name {
+			color: $red;
+		}
+		.cat-prod-card__arrow {
+			background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='26' height='6' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M14 0l12 6H14V0z' fill='%23EF1B1B'/%3e%3cpath fill='%23EF1B1B' d='M0 4h20v2H0z'/%3e%3c/svg%3e") no-repeat 0 0;
+			background-size: contain;
+		}
+		.cat-prod-card-img img {
+			transform: scale(1.05);
+		}
+	}
+
+	&__name {
+		@include transition();
+		word-break: break-word;
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 147%;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: $black;
+		width: 100%;
+		max-height: 110px;
+		
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		@media (max-width: $desktop-md) {
+			font-size: 14px;
+		}
+	}
+
+	&__arrow {
+		@include transition();
+		display: block;
+		width: 26px;
+		height: 6px;
+		background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='26' height='6' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M14 0l12 6H14V0z' fill='%231D2023'/%3e%3cpath fill='%231D2023' d='M0 4h20v2H0z'/%3e%3c/svg%3e") no-repeat 0 0;
+		background-size: contain;
+	}
+}
+
+.cat-prod-card-img {
+	flex: 0 0 auto;
+	max-width: none;
+	padding: 15px 20px;
+
+	img {
+		display: block;
+		width: 100%;
+		max-width: 130px;
+		transition: all .35s;
+	}
+}
+
+.cat-prod-card-info {
+	flex-grow: 1;
+	max-width: 100%;
+	flex-basis: 0;
+}
+
+.cat-prod-card__name {
+	margin-bottom: 20px;
+}

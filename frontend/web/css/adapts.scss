@@ -1,0 +1,235 @@
+.mob-show-x1279 {
+    display: none!important;
+}
+.mob-hide-x1279 {
+    display: block!important;
+    &._flex {
+       display: flex!important;
+    }
+}
+.mob-show-x766 {
+    display: none!important;
+    &._flex {
+       display: none!important; 
+    }
+}
+.mob-hide-x766 {
+    display: block!important;
+    &._flex {
+       display: flex!important; 
+    }
+}
+@media handheld, only screen and (min-width: 1440px) {
+    .wrapper {
+        margin: 0 auto;
+        width: 1440px;
+    }
+}
+@media handheld, only screen and (max-width: 1919px) {
+    /******** CATALOG MENU */
+    .menu-cat li {
+        margin-left: 25px;
+    }
+}
+@media handheld, only screen and (max-width: 1366px) {
+    .link-call {
+        font-size: 11px;
+    }
+    /******* SWITCH */
+    .switch-content_select {
+        min-width: inherit;
+    }
+}
+@media handheld, only screen and (max-width: 1365px) {
+    .switch-content {
+        top: 51px;
+        &_big {
+        
+        }
+    }
+}
+@media handheld, only screen and (max-width: 1279px) {
+    .mob-show-x1279 {
+        display: block!important;
+        &._flex {
+           display: flex!important; 
+        }
+    }
+    .mob-hide-x1279 {
+        display: none!important;
+        &._flex {
+           display: none!important; 
+        }
+    }
+    /******* CONTENT */
+    .content-nav__item {
+        margin-left: 30px;
+        font-size: 14px;
+    }
+    /******* BUTTONS */
+    .but {
+        height: 45px;
+        max-width: 220px;
+        line-height: 44px;
+        font-size: 14px;
+    }
+    /******* SUBSCRIDE FORM */
+    .subscribe-form-field {
+        width: 60%;
+    }
+    .subscribe-form-but {
+        width: 40%;
+    }
+    /******* OTHER */
+    .link-def {
+        font-size: 12px;
+    }
+    .link-call {
+        margin-top: 0;
+    }
+    .switch-content {
+        top: 49px;
+        width: 101.9%;
+    }
+}//1279
+@media handheld, only screen and (max-width: 1023px) {
+    .content-nav__item {
+        margin-left: 10px;
+    }
+}
+@media (max-width: 767px) {
+    .wrapper {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    /******* CONTENT */
+    .content {
+        padding: 40px 10px;
+    }
+    .content-col_right {
+        margin-top: 9px;
+    }
+    .content-nav__item {
+        font-size: 12px;
+        margin-left: 20px;
+    }
+    /******* BUTTONS */
+    .but {
+        height: 35px;
+        line-height: 35px;
+        max-width: 190px;
+    }
+    /******* OTHER */
+    .title {
+        font-size: 21px;
+    }
+    .s_tabs._flex .s_tabs_content.active {
+        flex-direction: column;
+    } 
+}//767
+@media handheld, only screen and (max-width: 766px) {
+    .mob-hide-x766 {
+        display: none!important;
+        &._flex {
+           display: none!important; 
+        }
+    }
+    .mob-show-x766 {
+        display: block!important;
+        &._flex {
+            display: flex!important;
+        }
+    }
+    .mob-show-x1279 {
+        &_hide-x766 {
+            display: none!important;
+        }
+    }
+    /******* OTHER */
+    .link-def {
+        font-size: 15px;
+        letter-spacing: 0.2em;
+    }
+    .title {
+        font-size: 24px;
+    }
+    /******* CONTENT */
+    .content {
+        padding: 39px 0;
+    }
+    .content-nav__item {
+        margin-left: 6px;
+        font-size: 10px;
+    }
+    .content-row {
+        margin: 14px 0 39px;
+    }
+    .content-col_left {
+        width: 100%;
+    }
+    .content-col_right {
+        display: none;
+    }
+    /******* BUTTONS */
+    .but {
+        height: 65px;
+        line-height: 62px;
+        font-size: 18px;
+        max-width: initial;
+        width: 100%;
+    }
+    /******* FORM */
+    .subscribe-form {
+        &_mob {
+            flex-direction: column;
+            .subscribe-form-field,
+            .subscribe-form-but {
+                width: 100%;
+            } 
+        }
+        &_footer {
+            .subscribe-form-field {
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .search-form_mob {
+        position: absolute;
+        display: initial;
+        z-index: 10;
+        padding: 0;
+        width: 100%;
+        height: 48px;
+        top: 0;
+        .search-form__but {
+            height: 48px;
+            top: 0;
+            i {
+                position: relative;
+                top: 1px;
+            }
+        }
+        .search-form__close {
+            display: none;
+        }
+    }
+    /******* SWITCH */
+    .switch__title._cur .b_arrow,
+    .switch__title._lang .b_arrow {
+        right: -27px;
+        text-align: center;
+    }
+    .switch__title._prof .b_arrow {
+        right: -23px;
+        top: -8px;
+    }
+    .switch-content {
+        width: 101.9%;
+        top: 50px;
+        padding: 0 0 3px;
+        li {
+            text-align: center;
+        }
+    }
+}
+//766

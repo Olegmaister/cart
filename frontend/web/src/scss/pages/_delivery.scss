@@ -1,0 +1,174 @@
+.p-delivery {
+	margin-top: 50px;
+	
+	&-inner {
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: -40px;
+		
+		@media (max-width: $tablet-md-sl) {
+			margin-left: 0;
+			flex-direction: column;
+		}
+		
+	}
+	
+	&-item {
+		width: 50%;
+		padding-left: 40px;
+		margin-bottom: 60px;
+		
+		@media (max-width: $tablet-md-sl) {
+			width: 100%;
+			padding-left: 0;
+			margin-bottom: 30px;
+		}
+		
+		&-head {
+			display: flex;
+			align-items: center;
+			min-height: 56px;
+			
+			&__num {
+				font-weight: 500;
+				font-size: 16px;
+				line-height: 147%;
+				letter-spacing: 0.08em;
+				text-transform: uppercase;
+				color: $red;
+				
+				margin-right: 20px;
+			}
+			
+			&__icon {
+				
+				img {
+					display: block;
+				}
+				
+			}
+			
+			@media (max-width: $tablet-md-sl) {
+				min-height: inherit;
+			}
+			
+		}
+		
+		&__title {
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 147%;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			color: $black;
+			
+			@media (max-width: $tablet-md-sl) {
+				font-size: 14px;
+				display: flex;
+			}
+			
+		}
+		
+		&__desc {
+			margin-top: 15px;
+			font-family: $font-second;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 14px;
+			line-height: 168%;
+			color: $black2;
+			text-align: justify;
+
+			&--long {
+				margin-top: 37px;
+			}
+		}
+		
+		&-inner {
+			margin-top: 25px;
+		}
+		
+		&-but {
+			margin-top: 20px;
+			
+			@media (max-width: $tablet-md-sl) {
+				.btn {
+					width: 100%;
+				}
+			}
+			
+		}
+		
+		&-title {
+			
+			&-wrap {
+				display: flex;
+				align-items: center;
+			}
+			
+			&__icon {
+				margin-left: 25px;
+			}
+			
+		}
+		
+	}
+	
+	&-info {
+		background-color: $black;
+		position: relative;
+		padding: 20px 20px 20px 60px;
+		
+		&__icon {
+			position: absolute;
+			left: 20px;
+			top: 16px;
+			width: 24px;
+			height: 24px;
+			
+			@media (max-width: $tablet-md-sl) {
+				left: 10px;
+				top: 13px;
+				width: 20px;
+				height: 20px;
+			}
+			
+		}
+		
+		&__title {
+			font-weight: 500;
+			font-size: 12px;
+			line-height: 132%;
+			letter-spacing: 0.06em;
+			text-transform: uppercase;
+			color: $white;
+			
+			@media (max-width: $tablet-md-sl) {
+				font-size: 10px;
+			}
+		}
+		
+		&__desc {
+			margin-top: 20px;
+			
+			font-family: $font-second;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 14px;
+			line-height: 168%;
+			color: $white;
+			
+			@media (max-width: $tablet-md-sl) {
+				margin-top: 10px;
+				font-size: 11px;
+			}
+			
+		}
+		
+		@media (max-width: $tablet-md-sl) {
+			padding: 17px 10px 12px 45px;
+		}
+		
+	}
+	
+}

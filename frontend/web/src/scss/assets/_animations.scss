@@ -1,0 +1,102 @@
+@keyframes brief-hover {
+	0% { box-shadow: 0 0 0 10px rgba($red, 0.5), 0 0 0 0 rgba($red, 0.5)}
+	50% {box-shadow: 0 0 0 20px rgba($red, 0), 0 0 0 10px rgba($red, 0.5)}
+	50.0001% { box-shadow: 0 0 0 0 rgba($red, 0.5), 0 0 0 10px rgba($red, 0.5)}
+	100% {box-shadow: 0 0 0 10px rgba($red, 0.5), 0 0 0 20px rgba($red, 0)}
+}
+
+@keyframes notify {
+	from {
+		opacity: 0;
+		transform: translateX(30px);
+	}
+}
+
+@keyframes scaleInModalSlider {
+	from {
+		opacity: 0;
+		//transform: translateY(-50%) scale(0.3);
+		transform: scale(0.3);
+	}
+	to {
+		opacity: 1;
+		//transform: translateY(-50%) scale(1);
+		transform: scale(1);
+	}
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes growIn {
+	from {
+		transform: scale(0.7);
+	}
+}
+
+@keyframes banner-indicator {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+@keyframes text-blink {
+	50% {
+		opacity: 0;
+	}
+}
+
+// animated button
+@keyframes animateTop {
+	0% {
+		-webkit-transform: translateX(100%);
+		transform: translateX(100%);
+	}
+	100% {
+		-webkit-transform: translateX(-100%);
+		transform: translateX(-100%);
+	}
+}
+
+
+@keyframes animateRight {
+	0% {
+		-webkit-transform: translateY(100%);
+		transform: translateY(100%);
+	}
+	100% {
+		-webkit-transform: translateY(-100%);
+		transform: translateY(-100%);
+	}
+}
+
+@keyframes animateBottom {
+	0% {
+		-webkit-transform: translateX(-100%);
+		transform: translateX(-100%);
+	}
+	100% {
+		-webkit-transform: translateX(100%);
+		transform: translateX(100%);
+	}
+}
+
+@keyframes animateLeft {
+	0% {
+		-webkit-transform: translateY(-100%);
+		transform: translateY(-100%);
+	}
+	100% {
+		-webkit-transform: translateY(100%);
+		transform: translateY(100%);
+	}
+}

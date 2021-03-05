@@ -1,0 +1,56 @@
+.checkout-payer-data {
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__error-description {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 147%;
+    color: $gray4;
+
+    & span {
+      padding-left: 20px;
+    }
+  }
+
+  & .field {
+    height: 48px;
+    margin-bottom: 16px;
+  }
+
+  &__form {
+
+    & .payer-data-btn {
+
+      @media (max-width: $tablet-md-s) {
+        height: 64px;
+        margin-top: 22px;
+      }
+
+      & .btn {
+        height: 100%;
+
+        @media (max-width: $tablet-md-s) {
+          width: 100vw;
+          margin-left: -16px;
+        }
+
+        & .btn__inner {
+
+          @media (max-width: $tablet-md-s) {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+
+  &__addressee {
+    cursor: pointer;
+  }
+
+}

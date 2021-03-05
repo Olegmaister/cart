@@ -1,0 +1,143 @@
+@import "reset.scss"; 
+@import "blocks/header.scss"; 
+@import "blocks/slider-content.scss"; 
+@import "blocks/brands.scss";
+@import "blocks/product-card.scss";
+@import "blocks/video-previews.scss";
+@import "blocks/subscribe-yt.scss";
+@import "blocks/journal.scss";
+@import "blocks/subscribe-mail.scss";
+@import "blocks/post-prev.scss";
+@import "blocks/footer.scss";
+/*================================================================================
+                                     MODAL
+================================================================================*/ 
+.modal_div {
+    width: 400px;
+    height: 400px;
+    position: fixed;
+    margin: auto;
+    padding: 30px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+    opacity: 0;
+    z-index: 9999999;
+    background-color: $white;
+    .but2._no_arrow {
+        margin-top: -29px;
+    }
+}
+#overlay {
+    z-index:9;
+    position:fixed;
+    background-color: $black;
+    opacity:0.5;
+    -moz-opacity:0.5;
+    filter:alpha(opacity=50);
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    cursor:pointer;
+    display:none;
+}
+#overlay-search {
+    z-index:9;
+    position:fixed;
+    background-color: $black;
+    opacity:0.5;
+    -moz-opacity:0.5;
+    filter:alpha(opacity=50);
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    cursor:pointer;
+    display:none;
+}
+.modal__close {
+    position: absolute;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    color: $black;
+    font-size: 50px;
+    top: 0;
+    right: 0;
+    z-index: 2;
+
+    &:hover {
+        &:before {
+            -moz-transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
+            -o-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+            transform: rotate(180deg); 
+        }
+    }
+    &:before {
+        content: "";
+        background: url('/assets/img/close.png') no-repeat 0 0;
+        background-size: contain;
+        width: 15px;
+        height: 15px;
+        margin: 7px;
+        display: block;
+
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: all 600ms;
+        -moz-transition: all 600ms;
+        -o-transition: all 600ms;
+        transition: all 600ms;
+    }
+}
+/*================================================================================
+                                     BREADCRUMBS
+================================================================================*/
+.breadcrumbs {
+    padding: 30px 0 30px 35px; 
+    li {
+        display: inline-block;
+        margin-left: 45px;
+        &:first-child {
+            margin-left: 0; 
+        }
+        &:last-child { 
+            a {
+                &:after {
+                    display: none;
+                }
+            }
+        }
+        a {
+            font-weight: 500;
+            font-size: 10px;
+            color: $gray4;
+            text-transform: uppercase;
+            display: inline-block;
+            position: relative;
+            &:after {
+                content: '';
+                position: absolute;
+                background: url("../img/bread_slesh.svg") no-repeat 0 0;
+                background-size: contain;
+                right: -30px;
+                top: 1px;
+                width: 13px;
+                height: 9px;
+            }
+            &:hover {
+                color: $red;
+            }
+        }
+    }
+}
+@import "adapts.scss"; 

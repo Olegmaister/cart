@@ -1,0 +1,85 @@
+.accumulation-progress {
+  width: 100%;
+  position: relative;
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-left: 34px;
+    padding-right: 34px;
+
+    &-item {
+      width: 8px;
+      height: 8px;
+      background-color: $gray4;
+      position: relative;
+
+      &.active {
+        background-color: $red;
+
+        &:before {
+          color: $red;
+        }
+      }
+
+      &:before {
+        content: attr(data-percent);
+        position: absolute;
+        top: -36px;
+        left: -8px;
+        font-family: 'Oswald', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        @include adaptiv-font(16, 12);
+        line-height: 147%;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: $gray4;
+      }
+
+      &:after {
+        content: attr(data-money);
+        position: absolute;
+        bottom: -28px;
+        left: -20px;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        @include adaptiv-font(12, 10);
+        line-height: 132%;
+        color: $black2;
+        width: 65px;
+      }
+    }
+  }
+
+  &__line-default {
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    background-color: $gray4;
+  }
+
+  &__line-active {
+    height: 4px;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    background-color: $red;
+    z-index: 1;
+
+    &:after {
+      content: '';
+      width: 16px;
+      height: 16px;
+      background-color: $red;
+      position: absolute;
+      top: -6px;
+      right: -8px;
+    }
+  }
+}

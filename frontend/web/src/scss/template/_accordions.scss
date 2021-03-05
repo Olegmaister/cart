@@ -1,0 +1,241 @@
+.desc-accord {
+	width: 100%;
+	
+	&--ls {
+		
+		.desc-accord-item {
+			padding-top: 11px;
+			padding-bottom: 11px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-between;
+		}
+		
+		.desc-accord-head {
+			width: 100%;
+		}
+		
+		.b_arrow {
+			display: none;
+		}
+		
+		.desc-accord-cont {
+			width: 100%;
+		}
+		
+	}
+	
+	&--bord {
+		
+		.desc-accord-item {
+			padding-left: 0;
+			padding-right: 0;
+		}
+		
+		.desc-accord-head {
+			
+			&:after {
+				content: '';
+				border-bottom: 2px solid #999;
+				border-right: 2px solid #999;
+				display: block;
+				height: 5px;
+				margin-top: -4px;
+				pointer-events: none;
+				position: absolute;
+				right: 25px;
+				top: 50%;
+				-webkit-transform-origin: 66% 66%;
+				-ms-transform-origin: 66% 66%;
+				transform-origin: 66% 66%;
+				-webkit-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				transform: rotate(45deg);
+				-webkit-transition: all 0.15s ease-in-out;
+				-o-transition: all 0.15s ease-in-out;
+				transition: all 0.15s ease-in-out;
+				width: 5px;
+			}
+			
+		}
+		
+		.desc-accord-head__title {
+			padding-left: 25px;
+			padding-right: 25px;
+		}
+		
+	}
+	
+}
+.desc-accord-item {
+	border: 2px solid $black2;
+	padding: 15px 25px;
+	margin-bottom: 15px;
+	
+	&:last-child {
+		margin-bottom: 0;
+	}
+	
+	&:hover {
+		
+		.desc-accord-head__title {
+			color: $red;
+		}
+		
+	}
+	
+	@media (max-width: $tablet-sm) {
+		padding: 15px;
+	}
+	
+}
+.desc-accord-head {
+	position: relative;
+	cursor: pointer;
+	
+	&__title {
+		@include transition();
+		color: $black;
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 147%;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		padding-right: 25px;
+		@media (max-width: $tablet-sm) {
+			font-size: 12px;
+		}
+	}
+	
+	&.b_arrow_up {
+		
+		&:after {
+			webkit-transform: rotate(-135deg);
+			-ms-transform: rotate(-135deg);
+			transform: rotate(-135deg);
+		}
+		
+	}
+	
+}
+.desc-accord-cont {
+	padding-top: 30px;
+	font-family: 'Roboto', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 147%;
+	color: $gray11;
+	display: none;
+	
+	@media (max-width: $tablet-sm) {
+		padding-top: 20px;
+		font-size: 14px;
+	}
+	
+}
+//product accord
+.product-accord {
+	width: 100%;
+	margin-top: 30px;
+}
+.product-accord-item {
+	
+	border-bottom: 2px solid $gray5;
+	padding: 15px 17px;
+	
+	@media (max-width: $tablet-md-s) {
+		padding: 19px 17px 19px;
+	}
+	
+	&:first-child {
+		border-top: 2px solid $gray5;
+	}
+	
+	&:last-child {
+		margin-bottom: 0;
+	}
+	
+}
+
+.product-accord-head {
+	position: relative;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	
+	&__title {
+		color: $black2;
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 147%;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+	}
+	
+	&:before {
+		
+		@include transition();
+		content: '';
+		position: absolute;
+		right: 0;
+		width: 12px;
+		height: 12px;
+		background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M8.485 1.828l8.486 8.486-8.486 8.485' stroke='%238C8C8C' stroke-width='3'/%3e%3c/svg%3e") no-repeat 0 0;
+		background-size: contain;
+	}
+	
+	&.b_arrow_up {
+		
+		&:before {
+			background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M8.485 1.828l8.486 8.486-8.486 8.485' stroke='%238C8C8C' stroke-width='3'/%3e%3c/svg%3e") no-repeat 0 0;
+			background-size: contain;
+			transform: rotate(90deg);
+		}
+		
+		.product-accord-head__title {
+			color: $red;
+		}
+		
+	}
+	
+}
+.product-accord-cont {
+	padding-top: 30px;
+	font-family: 'Roboto', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 147%;
+	color: $gray11;
+	text-align: justify;
+	display: none;
+	
+	&--empty-rev {
+		
+		@media (max-width: $tablet-sm) {
+			
+			.product-tabs__title {
+				font-size: 12px;
+			}
+			
+			.btn {
+				width: 100%!important;
+				height: 30px!important;
+				margin-top: 10px!important;
+			}
+			
+		}
+		
+	}
+	
+}
+
+@media (max-width: 600px) {
+	
+	.product-accord-cont {
+		font-size: 14px;
+	}
+	
+}

@@ -1,0 +1,32 @@
+$spacer: 30px;
+$spacers: (
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 2),
+  6: ($spacer * 2.5),
+  7: ($spacer * 3),
+  8: ($spacer * 3.5),
+  9: ($spacer * 4),
+  10: ($spacer * 4.5),
+  11: ($spacer * 5)
+);
+
+$red: #EF1B1B;
+$dark: #45484A;
+$grey: #8b8b8b;
+$light: #F6F6F6;
+
+$p_color: #757575;
+$link_color: $dark;
+$link_color_hover: $red;
+
+%slick {
+  &:not(.slick-initialized) {
+    > div:not(:first-child) {
+      display: none;
+    }
+  }
+}

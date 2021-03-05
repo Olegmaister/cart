@@ -1,0 +1,87 @@
+/*================================================================================
+                            	FORM SUBSCRIBE YOUTUBE                                     
+================================================================================*/
+.subscribe-yt {
+	background-color: $black;
+    padding: 41px 0;
+
+	.wrapper {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__icon {
+		width: 51px;
+		height: 51px;
+		position: absolute;
+		left: 19px;
+		top: 0;
+		bottom: 0;
+	    margin: auto 0;
+		img {
+			display: block;
+		}
+	}
+	&__txt {
+	    padding-left: 118px;
+		color: $white;
+		font-size: 28px;
+		line-height: 142%;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+	}
+}
+.subscribe-yt-col {
+	position: relative;
+    align-items: center;
+	&_left {
+		width: 60%;
+	}
+	&_right {
+		width: 40%;
+		justify-content: flex-end;
+    	display: flex;
+	}
+}
+/*================================================================================
+                                    ADAPTS                                     
+================================================================================*/
+@media handheld, only screen and (max-width: 1279px) {
+	.subscribe-yt__txt {
+        font-size: 18px;
+    }
+}
+@media handheld, only screen and (max-width: 767px) {
+	.subscribe-yt__txt {
+        font-size: 15px;
+        padding-left: 89px;
+    }
+}
+@media handheld, only screen and (max-width: 766px) {
+	.subscribe-yt {
+		.wrapper {
+			flex-direction: column;
+		}
+	}
+	.subscribe-yt-col {
+		&_left,
+		&_right {
+			width: 100%;
+		}
+	}
+	.subscribe-yt__icon {
+		left: 0;
+	}
+	.subscribe-yt__txt {
+		font-size: 12px;
+		padding-left: 77px;
+		line-height: 18px;
+	}
+	.subscribe-yt {
+		padding: 36px 0 44px;
+	}
+	.subscribe-yt-col_left {
+		margin-bottom: 28px;
+	}
+}
+

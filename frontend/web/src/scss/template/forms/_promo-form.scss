@@ -1,0 +1,49 @@
+.promo-form {
+  width: 100%;
+  display: flex;
+
+  &__field {
+    flex: 1 1;
+  }
+
+  &__input {
+    width: 100%;
+    height: 48px;
+    border: 2px solid $gray6;
+    background-color: $white;
+    border-right: 0;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 147%;
+    text-transform: uppercase;
+    color: $red;
+    padding: 10px 0 10px 24px;
+
+    &::placeholder {
+      font-family: "Roboto", sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 147%;
+      text-transform: lowercase;
+      color: $red;
+      transform: translateX(0);
+      transition: color .2s ease-in-out;
+    }
+
+    &:focus::placeholder {
+      color: rgba($red, .15);
+    }
+  }
+
+  &__button {
+    padding: 0 20px;
+    //min-width: 216px;
+
+    @media (min-width: 992px) {
+      padding: 0 40px;
+    }
+  }
+}

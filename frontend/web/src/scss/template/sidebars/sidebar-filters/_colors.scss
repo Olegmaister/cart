@@ -1,0 +1,38 @@
+.filter-colors {
+	display: flex;
+	flex-wrap: wrap;
+	padding-right: 20px;
+}
+.filter-colors-col {
+	width: 50%;
+	margin-bottom: 8px;
+}
+.check-color-popup {
+	position: absolute;
+	z-index: 1;
+	display: flex;
+	flex-wrap: wrap;
+	top: 57px;
+	right: -190px;
+	width: 201px;
+	background-color: $white;
+	box-shadow: 0 4px 21px rgba(0, 0, 0, 0.16);
+	visibility: hidden;
+	padding: 15px 15px 7px 15px;
+	transition: visibility 0s linear 0.2s, opacity 0.2s linear;
+	&:before {
+		content: '';
+		position: absolute;
+		left: -14px;
+		top: 0;
+		width: 14px;
+		height: 7px;
+		background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='14' height='7'%3e%3cdefs%3e%3cimage width='14' height='7' id='img1' href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAHAgMAAABFKZSKAAAAAXNSR0IB2cksfwAAAAxQTFRF////////////AAAA9RsoYQAAAAR0Uk5TRrn/AFRHWZYAAAAgSURBVHicY5BatWoBw0cQ8V8KRHwEEf+lQMRHEPFfAQBIwBP1kOp5SQAAAABJRU5ErkJggg=='/%3e%3c/defs%3e%3cstyle%3e%3c/style%3e%3cuse id='Background' href='%23img1' x='0' y='0'/%3e%3c/svg%3e") no-repeat 0 0;
+		background-size: contain;
+	}
+}
+@media (max-width: $tablet-md-sl) {
+	.filter-colors-col {
+		margin-bottom: 16px;
+	}
+}

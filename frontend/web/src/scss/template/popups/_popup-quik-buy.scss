@@ -1,0 +1,90 @@
+.popup-quik-buy {
+
+	.control-label {
+		display: none;
+	}
+
+	&-row {
+		display: flex;
+		margin-bottom: 15px;
+		align-items: flex-start;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+		
+		@media (max-width: $tablet-md-s) {
+			flex-direction: column;
+			margin-bottom: 0;
+		}
+	}
+	
+	&-col {
+		width: 50%;
+		display: flex;
+		
+		&:first-child {
+			padding-right: 10px;
+		}
+		
+		&:last-child {
+			padding-left: 10px;
+		}
+		
+		&-inner {
+			width: 50%;
+			display: flex;
+			align-items: center;
+		}
+		
+		@media (max-width: $tablet-md-s) {
+			width: 100%;
+			margin-bottom: 15px;
+			
+			&:first-child {
+				padding-right: 0;
+			}
+			
+			&:last-child {
+				padding-left: 0;
+			}
+			
+		}
+	}
+	
+	&-info {
+		display: flex;
+		
+		&-col {
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 132%;
+			letter-spacing: 0.06em;
+			text-transform: uppercase;
+			color: $black;
+			
+			&--price {
+				color: $red;
+				margin-left: 7px;
+			}
+			
+		}
+		
+	}
+	
+	&-buttons {
+		margin-top: 15px;
+		
+		@media (max-width: $tablet-md-s) {
+			
+			.popup-quik-buy-col {
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+			
+		}
+		
+	}
+	
+}

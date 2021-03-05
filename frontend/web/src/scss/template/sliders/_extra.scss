@@ -1,0 +1,143 @@
+.content-extra {
+  overflow-x: hidden;
+  margin-top: 40px;
+}
+
+.slider-extra {
+  margin-left: -10px;
+  margin-right: -10px;
+  display: flex;
+  transition: transform .4s ease-in-out;
+
+  @media (max-width: $tablet-sm) {
+    margin-left: -10px;
+  }
+
+  & .product-card-col {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+}
+
+.slider-extra-arrows {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  width: 65px;
+
+  @media (max-width: $tablet-sm) {
+    top: initial;
+    bottom: 25px;
+    width: 100%;
+  }
+
+  &__arrow {
+    @include transition();
+    position: absolute;
+    cursor: pointer;
+    background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M18.542 8.485l-8.486 8.486-8.485-8.486' stroke='%23757575' stroke-width='3'/%3e%3c/svg%3e") no-repeat 0 0;
+    background-size: contain;
+    width: 22px;
+    height: 22px;
+    transform: rotate(90deg);
+
+    &.is-disable {
+      opacity: .2;
+      pointer-events: none;
+    }
+
+    &_prev {
+      left: 0;
+    }
+
+    &_next {
+      right: 0;
+      transform: rotate(-90deg);
+    }
+
+    &:hover {
+      background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M18.542 8.485l-8.486 8.486-8.485-8.486' stroke='%23EF1B1B' stroke-width='3'/%3e%3c/svg%3e") no-repeat 0 0;
+      background-size: contain;
+    }
+  }
+}
+
+.carousel-1,
+.carousel-1b,
+.carousel-1c {
+  padding: 35px 0;
+  margin-bottom: 30px;
+
+  .product-card-col {
+    min-width: auto;
+    padding: 0 0 20px;
+  }
+
+  .product-card {
+    height: auto;
+    //margin-bottom: 30px;
+  }
+
+  .slick-slide.product-card-col {
+    padding: 0 10px;
+  }
+
+  > .slick-list {
+    margin-left: -10px;
+    margin-right: -10px;
+    width: auto;
+
+    > .slick-track {
+      margin-left: 0;
+    }
+  }
+
+  > .slick-arrow {
+    background: none;
+    width: 34px;
+    height: 34px;
+    position: absolute;
+    z-index: 9;
+    bottom: 0;
+
+    @media (min-width: 600px) {
+      bottom: 100%;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 8px;
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .slick_prev {
+    left: 0;
+
+    @media (min-width: 600px) {
+      right: 40px;
+      left: auto;
+    }
+
+    &:after {
+      left: 4px;
+      border-bottom: 3px solid #757575;
+      border-left: 3px solid #757575;
+      transform: rotate(45deg);
+    }
+  }
+
+  .slick_next {
+    right: 0;
+
+    &:after {
+      right: 4px;
+      border-bottom: 3px solid #757575;
+      border-right: 3px solid #757575;
+      transform: rotate(-45deg);
+    }
+  }
+}

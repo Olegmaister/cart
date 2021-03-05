@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /account/
+Disallow: /checkout/
+Disallow: /search/
+Disallow: /*&limit
+Disallow: /*?sort
+Disallow: /*&sort
+Host:https://dev.p1gtac.com
+Sitemap:https://dev.p1gtac.com/sitemap_index.xml
+Sitemap:https://dev.p1gtac.com/sitemap-images.xml

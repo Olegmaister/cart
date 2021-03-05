@@ -1,0 +1,35 @@
+.like {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+
+  &__icon {
+    & path {
+      stroke: $gray4;
+    }
+  }
+
+  &__count {
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    color: $gray4;
+    margin-left: 10px;
+    margin-right: 4px;
+  }
+
+  &--dynamic {
+    cursor: pointer;
+  }
+
+  &--dynamic:hover &__icon {
+    & path {
+      stroke: $red;
+    }
+  }
+
+  &--dynamic:hover &__count {
+    color: $red;
+  }
+
+}

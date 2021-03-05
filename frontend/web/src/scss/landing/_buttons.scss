@@ -1,0 +1,121 @@
+.button-1 {
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1;
+  color: #fff;
+  background: $red;
+  text-align: center;
+  padding: 9px 20px;
+  transition: background .2s;
+
+  @media (min-width: 576px) {
+    letter-spacing: 0.2em;
+  }
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    background: darken($red, 6%);
+  }
+}
+
+.button-2 {
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  color: $red;
+  padding-bottom: 6px;
+  border-bottom: 2px solid $red;
+
+  @media (min-width: 576px) {
+    letter-spacing: 0.2em;
+  }
+}
+
+.button-social {
+  background: #3B5999;
+  color: #fff;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  padding: 10px 25px;
+  transition: background .25s;
+
+  @media (min-width: 576px) {
+    padding: 10px 35px;
+  }
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    background: transparentize(#3B5999, 0.1);
+  }
+}
+
+.button-3 {
+  display: inline-block;
+  color: #fff;
+  background: $red;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  line-height: 1;
+  padding: 17px 30px;
+  letter-spacing: 0.2em;
+  transition: background .2s;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    background: darken($red, 6%);
+  }
+}
+
+.button-4 {
+  display: inline-block;
+  color: #fff;
+  background: #757575;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  line-height: 1;
+  padding: 15px 30px;
+  letter-spacing: 0.2em;
+  transition: background .2s;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    background: darken(#757575, 6%);
+  }
+
+  @media (min-width: 576px) {
+    padding: 15px 45px;
+    font-size: 18px;
+  }
+}
+
+.button-5 {
+  display: inline-block;
+  color: $dark;
+  padding: 18px 30px;
+  line-height: 1;
+  border: 1px dashed #000;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  font-weight: bold;
+
+  &:hover,
+  &:focus {
+    color: $dark;
+  }
+}

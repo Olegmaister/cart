@@ -1,0 +1,79 @@
+.breadcrumbs {
+  padding-top: 34px;
+
+  @media (max-width: $tablet-sm) {
+    padding-top: 25px;
+    display: block!important;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item,
+  li {
+    display: inline-block;
+    vertical-align: middle;
+
+    &__link,
+    a {
+      font-weight: 500;
+      font-size: 10px;
+      color: $gray4;
+      text-transform: uppercase;
+      display: inline-block;
+      position: relative;
+
+      @media (max-width: $tablet-sm) {
+        font-size: 9px;
+      }
+
+      &:after {
+        content: '';
+        display: inline-block;
+        margin: 0 5px;
+        background: url("/images/bread_slesh.svg") no-repeat 0 0;
+        width: 13px;
+        height: 9px;
+        pointer-events: none;
+
+        @media (min-width: 992px) {
+          margin: 0 14px;
+        }
+      }
+
+      &:focus,
+      &:hover {
+        color: $red;
+      }
+    }
+
+
+    &__link--current,
+    > span {
+      font-weight: 400;
+      font-size: 10px;
+      color: $gray6;
+      text-transform: uppercase;
+      display: inline-block;
+      position: relative;
+
+      @media (max-width: $tablet-sm) {
+        font-size: 9px;
+      }
+
+      @media (max-width: 576px) {
+        max-width: 150px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+}

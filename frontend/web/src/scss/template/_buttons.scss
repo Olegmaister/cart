@@ -1,0 +1,849 @@
+/*
+ * Подчеркнутая кнопка *
+ * при наведении заливаеться и стает в виде кнопки *
+ */
+.btn-link {
+  border: 0;
+  background-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 2px;
+    background-color: $white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: bottom;
+    transform: scaleY(0);
+    z-index: 1;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 2px;
+    background-color: $white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform-origin: bottom;
+    transform: scaleY(0);
+    z-index: 1;
+  }
+
+  &__inner {
+    padding: 12px;
+    font-family: 'Oswald', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $white;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px solid $white;
+    position: relative;
+
+    @media (max-width: $mobile-lg) {
+      padding: 10px;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      width: 50%;
+      height: 2px;
+      background-color: $white;
+      position: absolute;
+      top: -2px;
+      left: 0;
+      transform-origin: left;
+      transform: scaleX(0);
+      z-index: 1;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      width: 50%;
+      height: 2px;
+      background-color: $white;
+      position: absolute;
+      top: -2px;
+      right: 0;
+      transform-origin: right;
+      transform: scaleX(0);
+      z-index: 1;
+    }
+  }
+
+  &:focus,
+  &:hover {
+    &:after,
+    &:before {
+      transition: transform .15s linear;
+      transform: scaleY(1);
+    }
+  }
+
+  &:focus &__inner,
+  &:hover &__inner {
+    transition: background-color .15s linear .3s, color .15s linear .3s;
+    color: $black;
+    background-color: $white;
+
+    &:after,
+    &:before {
+      transition: transform .15s linear .15s;
+      transform: scaleX(1);
+    }
+  }
+
+
+  &--red {
+
+    &:before {
+      background-color: $red;
+    }
+
+    &:after {
+      background-color: $red;
+    }
+
+    & .btn-link__inner {
+      color: $red;
+      border-bottom: 2px solid $red;
+
+      &:before {
+        background-color: $red;
+      }
+
+      &:after {
+        background-color: $red;
+      }
+    }
+
+    &:focus,
+    &:hover {
+      &:after,
+      &:before {
+        transition: transform .15s linear;
+        transform: scaleY(1);
+      }
+    }
+
+    &:focus .btn-link__inner,
+    &:hover .btn-link__inner {
+      transition: background-color .15s linear .3s, color .15s linear .3s;
+      color: $white;
+      background-color: $red;
+
+      &:after,
+      &:before {
+        transition: transform .15s linear .15s;
+        transform: scaleX(1);
+      }
+    }
+  }
+}
+
+.btn {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-family: "Oswald", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    @include adaptiv-font(16, 12);
+    line-height: 1;
+    text-align: center;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+  }
+
+  // COLORS
+  &--red {
+    border: 0;
+    background-color: $red;
+    transition: background-color .3s ease-in-out;
+
+    &:hover {
+      background-color: $red-hover;
+    }
+
+    & .btn__inner {
+      color: $white;
+    }
+  }
+
+  &--black {
+    border: 0;
+    background-color: $black-hover;
+
+    & .btn__inner {
+      color: $white;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: $black;
+      transform: scale(1);
+      transition: transform .3s linear, opacity .3s linear;
+    }
+
+    &:focus:before,
+    &:hover:before {
+      opacity: 0;
+      //transform: scale(0);
+    }
+  }
+
+  &--gray {
+    border: 0;
+    background-color: $gray4-hover;
+    transition: background-color .25s;
+
+    & .btn__inner {
+      color: $white;
+      @include transition();
+    }
+
+    &:hover {
+      background-color: $gray4;
+    }
+
+    //&:before {
+    //  content: '';
+    //  display: block;
+    //  width: 100%;
+    //  height: 100%;
+    //  position: absolute;
+    //  top: 0;
+    //  left: 0;
+    //  background-color: $gray4;
+    //  transform: scale(1);
+    //  transition: transform .3s linear;
+    //}
+    //
+    //&:focus:before,
+    //&:hover:before {
+    //  transform: scale(0);
+    //}
+    //
+    //&:focus,
+    //&:hover {
+    //
+    //  .btn__inner {
+    //    background-color: $gray6;
+    //  }
+    //
+    //}
+  }
+
+  &--blue {
+    border: 0;
+    background-color: $blue2-hover;
+    transition: background-color .2s ease-in-out;
+
+    & .btn__inner {
+      color: $white;
+    }
+
+    &:hover {
+      background-color: $black-hover;
+    }
+  }
+
+  &--icon {
+
+    .btn__inner {
+      display: flex;
+      @include adaptiv-font(16, 12);
+
+      i {
+        display: block;
+        margin-right: 12px;
+      }
+    }
+
+    &--gl {
+
+      .btn__inner {
+
+        i {
+          width: 25px;
+          height: 24px;
+          background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='25' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.254 10.514v4.205h6.96c-.29 1.813-2.102 5.293-6.96 5.293-4.206 0-7.614-3.48-7.614-7.758 0-4.278 3.408-7.759 7.614-7.759 2.393 0 3.988 1.016 4.858 1.886l3.335-3.19C18.272 1.232 15.517 0 12.254 0A12.193 12.193 0 000 12.254c0 6.743 5.438 12.254 12.254 12.254C19.287 24.508 24 19.577 24 12.544c0-.798-.073-1.45-.218-2.03H12.254z' fill='%23fff'/%3e%3c/svg%3e") no-repeat 0 0;
+          background-size: contain;
+        }
+      }
+    }
+
+    &--fb {
+
+      .btn__inner {
+
+        i {
+          width: 10px;
+          height: 20px;
+          background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='10' height='20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M9.471 10.524H6.52V20H2.115v-9.476H0V6.812h2.115V4.41C2.115 2.707 2.907 0 6.52 0h3.26v3.58H7.4c-.396 0-.924.175-.924 1.005V6.77h3.348l-.353 3.755z' fill='%23fff'/%3e%3c/svg%3e") no-repeat 0 0;
+          background-size: contain;
+        }
+
+      }
+
+    }
+
+    &--lx {
+
+      .btn__inner {
+        @include adaptiv-font(14, 14);
+      }
+
+    }
+
+    &--ls {
+
+      .btn__inner {
+        @include adaptiv-font(13, 13);
+      }
+
+    }
+
+  }
+
+  &--trans {
+    background-color: transparent;
+    border: 2px solid $black;
+    padding-left: 8px;
+    padding-right: 8px;
+    @include transition();
+
+    & .btn__inner {
+      color: $black;
+    }
+
+    &:hover {
+      background-color: $red;
+      border-color: $red;
+
+      & .btn__inner {
+        color: $white;
+      }
+    }
+
+    &-red {
+      border: 2px solid $red;
+
+      & .btn__inner {
+        color: $red;
+        font-size: 12px;
+      }
+
+      &:hover {
+        border: 2px solid $red;
+        background-color: $red;
+
+        & .btn__inner {
+          color: $white;
+        }
+      }
+    }
+
+    &--v2 {
+      border: none;
+
+      .btn__inner {
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 120%;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: $black;
+      }
+
+      &:hover {
+        background-color: $bg;
+
+        .btn__inner {
+          color: $red;
+        }
+      }
+    }
+  }
+
+  /*
+  * SIZE
+  *-------------*/
+  // растягиваеться на все площадь, которую дают
+  &--full {
+    width: 100%;
+    height: 100%;
+  }
+
+  &--inline {
+    display: inline-flex !important;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @media (max-width: $tablet-md-sl) {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+  }
+
+  &--lg {
+    width: 334px;
+    height: 64px;
+
+    & .btn__inner {
+      font-size: 18px;
+    }
+  }
+
+  &--lx {
+    width: 216px;
+    height: 48px;
+
+    & .btn__inner {
+      font-size: 14px;
+    }
+  }
+
+  &--xxl {
+    width: 255px;
+    height: 32px;
+
+    & .btn__inner {
+      font-size: 12px;
+    }
+  }
+
+  &--lxx {
+    width: 300px;
+    height: 48px;
+
+    & .btn__inner {
+      font-size: 14px;
+    }
+
+    @media (max-width: $tablet-md-sl) {
+      &-md-sl {
+        width: 100%;
+      }
+    }
+  }
+
+  &--lxs {
+    width: 140px;
+    height: 32px;
+
+    & .btn__inner {
+      font-size: 12px;
+    }
+  }
+
+  &--lxs-h {
+    height: 32px;
+
+    & .btn__inner {
+      font-size: 12px;
+    }
+
+  }
+
+  &--lg-h {
+    height: 64px;
+  }
+
+  &--lg-x {
+    height: 48px;
+
+    & .btn__inner {
+      font-size: 12px;
+    }
+
+  }
+
+  &--lg-xs {
+    height: 48px;
+
+    & .btn__inner {
+      font-size: 14px;
+    }
+
+  }
+
+  &--lg-xs-l {
+    height: 48px;
+
+    & .btn__inner {
+      font-size: 18px;
+    }
+
+  }
+
+  &--lss {
+    height: 26px;
+
+    & .btn__inner {
+      font-size: 10px;
+    }
+
+  }
+
+  &--lg-l {
+    height: 35px;
+
+    & .btn__inner {
+      font-size: 12px;
+    }
+  }
+
+  &--lg-lx {
+    height: 33px;
+
+    & .btn__inner {
+      font-size: 12px;
+    }
+  }
+}
+
+
+/*
+*   Закрашенная кнопка
+*
+*   Нужно задавать 4 классов в разметке:
+*   btn - общий
+*   btn--primary - указывает, что за тип кнопки
+*   btn--primary-black - задаем цвет текста и бордера
+*   btn--primary-medium - задаем размер
+*-----------------------------------------------*/
+.btn {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__inner {
+    position: relative;
+  }
+
+  &--primary {
+    position: relative;
+    border-width: 0;
+
+    // цвет
+    &-black {
+      color: $white;
+      background-color: $black;
+      position: relative;
+      transition: background-color .3s ease-in-out;
+
+      &:hover {
+        background-color: $black-hover;
+      }
+    }
+
+    &-red {
+      color: $white;
+      background-color: $red;
+      position: relative;
+      transition: background-color .3s ease-in-out;
+
+      &:hover {
+        background-color: $red-hover;
+      }
+    }
+
+    &-gray {
+      color: $white;
+      background-color: $gray4;
+      position: relative;
+      transition: background-color .3s ease-in-out;
+
+      &:hover {
+        background-color: $black2;
+      }
+    }
+
+    // размер
+    &-medium {
+      height: 48px;
+      width: 100%;
+    }
+  }
+}
+
+
+/*
+*   Кнопки с обводкой
+*
+*   Нужно задавать 5 классов в разметке:
+*   btn - общий
+*   btn--secondary - указывает, что это кнопка с обводкой
+*   btn--secondary-black - задаем цвет
+*   btn--secondary-large - задаем размер
+*-----------------------------------------------*/
+.btn {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  outline: none;
+
+  &__inner {
+    position: relative;
+  }
+
+  &--secondary {
+    position: relative;
+    background-color: transparent;
+    border-width: 0;
+
+    // цвет
+    &-black {
+      color: $black;
+      background-color: $white;
+      border: 2px solid $black;
+      transition: color .3s ease-in-out, background-color .3s ease-in-out;
+
+      &:hover {
+        color: $white;
+        background-color: $black;
+      }
+    }
+
+    // размер
+    &-medium {
+      height: 48px;
+      width: 100%;
+    }
+  }
+
+  &:hover {
+    border-radius: 0;
+    outline: none;
+
+    span {
+      border-radius: 0;
+      outline: none;
+    }
+  }
+}
+
+
+/*
+Надо отрефакторить как то
+*/
+
+@media (min-width: 850px) {
+  body {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  .border-animation {
+    font-size: 6em;
+    line-height: 1em;
+  }
+}
+
+.but {
+  display: block;
+  width: 100%;
+  max-width: 334px;
+  height: 64px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  overflow: hidden;
+  background-color: $black;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+
+  font-family: Oswald, sans-serif;
+  color: $white;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 0.2em;
+  line-height: 62px;
+  text-transform: uppercase;
+
+  span {
+    position: relative;
+    z-index: 2;
+    display: block;
+    text-align: center;
+  }
+
+  &:hover {
+    background-color: $black-hover;
+  }
+}
+
+//btn-red
+.but-center {
+  margin: 0 auto;
+}
+
+.but-red {
+  background-color: $red;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    background-color: $black-hover;
+  }
+}
+
+/******* LINKS */
+.link-line-dotted {
+  cursor: pointer;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 10px;
+  color: $black2;
+  border-bottom: 1px dashed $black2;
+  padding-bottom: 3px;
+
+  &:hover {
+    color: $red;
+    border-color: $red;
+  }
+
+  &--red {
+    color: $red;
+    border-bottom: 1px dashed $red;
+
+    &:hover {
+      color: $black;
+      border-bottom: 1px dashed $black;
+    }
+  }
+}
+
+div.link-line-dotted {
+  display: inline-block;
+}
+
+.link {
+  display: inline-block;
+
+  font-family: 'Oswald', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 120%;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: $black;
+  @include transition();
+
+  &:hover {
+    color: $red;
+  }
+
+  &--red {
+    color: $red;
+
+    &:hover {
+      color: $black;
+    }
+  }
+}
+
+/*================================================================================
+                                    ADAPTS
+================================================================================*/
+// Зачем убирать? если убирать, то на ховер изменения цвета тоже надо менять
+//@media (max-width: 766px) {
+//  .btn-link {
+//    &:before,
+//    &:after {
+//      display: none;
+//    }
+//
+//    &__inner {
+//      padding-left: 0;
+//      padding-right: 0;
+//
+//      &:before,
+//      &:after {
+//        display: none;
+//      }
+//    }
+//
+//    &:hover {
+//      .btn-link__inner {
+//        background: none !important;
+//      }
+//    }
+//  }
+//}
+
+@media (max-width: 479px) {
+  .btn--trans--v2 .btn__inner {
+    font-size: 11px;
+  }
+  .btn {
+    &--icon {
+      padding-left: 10px;
+      padding-right: 10px;
+
+      .btn__inner {
+        margin-right: 8px;
+      }
+    }
+  }
+  .btn--icon--gl .btn__inner i {
+    width: 15px;
+    height: 17px;
+  }
+  .btn--icon--fb .btn__inner i {
+    width: 10px;
+    height: 15px;
+  }
+}
+
+@media (max-width: 374px) {
+  .btn {
+    &--icon {
+      .btn__inner {
+        margin-right: 5px;
+      }
+    }
+  }
+}

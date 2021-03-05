@@ -1,0 +1,191 @@
+/*  MIXINS
+========================================== */
+
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+  -moz-transform: $transform;
+  -ms-transform: $transform;
+  -o-transform: $transform;
+  transform: $transform;
+}
+
+@mixin keyframes($keyframes) {
+  @-webkit-keyframes #{$keyframes} { @content; }
+  @-moz-keyframes #{$keyframes} { @content; }
+  @-o-keyframes #{$keyframes} { @content; }
+  @keyframes #{$keyframes} { @content; }
+}
+
+@mixin animation($animation) {
+  -webkit-animation: #{$animation};
+  -moz-animation: #{$animation};
+  -o-animation: #{$animation};
+  animation: #{$animation};
+}
+
+@mixin animation-delay($animation-delay) {
+  -webkit-animation-delay: #{$animation-delay};
+  -moz-animation-delay: #{$animation-delay};
+  -o-animation-delay: #{$animation-delay};
+  animation-delay: #{$animation-delay};
+}
+
+/*  LOADER
+========================================== */
+$loader-speed: 1.6s;
+
+.loader-catalog,
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -100;
+  transition: opacity .4s ease-out;
+
+  body.loader-is-run & {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 9999;
+  }
+
+  .dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
+    width: 15px;
+    height: 15px;
+    background-color: $red;
+    border-radius: 50%;
+    animation-timing-function: cubic-bezier(0.42, 0.0, 0.58, 1.0);
+    backface-visibility: hidden;
+
+    &:nth-of-type(1) {
+      top: calc(50% - 40px);
+      left: calc(50% - 40px);
+      @include animation(contract $loader-speed infinite);
+    }
+
+    &:nth-of-type(2) {
+      top: calc(50% - 40px);
+      @include animation(contract $loader-speed infinite);
+    }
+
+    &:nth-of-type(3) {
+      top: calc(50% - 40px);
+      left: calc(50% + 40px);
+      @include animation(contract $loader-speed infinite);
+    }
+
+    &:nth-of-type(4) {
+      left: calc(50% - 40px);
+      @include animation(contract $loader-speed infinite);
+    }
+
+    &:nth-of-type(5) {
+      @include animation(dot-size $loader-speed infinite);
+    }
+
+    &:nth-of-type(6) {
+      left: calc(50% + 40px);
+      @include animation(contract $loader-speed infinite);
+    }
+
+    &:nth-of-type(7) {
+      top: calc(50% + 40px);
+      left: calc(50% - 40px);
+      @include animation(contract $loader-speed infinite);
+    }
+
+    &:nth-of-type(8) {
+      top: calc(50% + 40px);
+      @include animation(contract $loader-speed infinite);
+    }
+
+    &:nth-of-type(9) {
+      top: calc(50% + 40px);
+      left: calc(50% + 40px);
+      @include animation(contract $loader-speed infinite);
+    }
+  }
+}
+
+.page-content-inner {
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: calc(100% - 30px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(34, 34, 34, 0.35);
+    z-index: 99;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .4s ease-in-out, visibility 0s ease-in-out;
+  }
+
+  &.is-load-card {
+
+    & .product-card-wrap {
+      margin-top: -400px;
+    }
+
+    &:before {
+      pointer-events: auto;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.loader-catalog {
+  position: sticky;
+  top: calc(50% - 200px);
+  left: 0;
+  width: 100%;
+  height: 400px;
+  background-color: transparent;
+  z-index: 100;
+  opacity: 1;
+  pointer-events: none;
+}
+
+@include keyframes(contract) {
+40% {
+top: 50%;
+left: 50%;
+width: 30px;
+height: 30px;
+}
+
+46% {
+top: 50%;
+left: 50%;
+width: 30px;
+height: 30px;
+}
+}
+
+@include keyframes(dot-size) {
+40% {
+width: 40px;
+height: 40px;
+}
+
+43% {
+width: 40px;
+height: 40px;
+}
+}

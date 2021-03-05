@@ -1,0 +1,80 @@
+.p-reviews {
+	
+	&-bot {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 30px;
+		
+		@media (max-width: $tablet-md-sl) {
+			
+			flex-direction: column;
+			justify-content: center;
+			
+			.paginations {
+				order: 2;
+			}
+			
+			.btn {
+				order: 1;
+				margin-bottom: 25px;
+			}
+			
+		}
+		
+	}
+	
+	@media (max-width: $mobile-md) {
+		
+		.product-reviews {
+			
+			&-col {
+				
+				&--left {
+					margin-top: 23px;
+				}
+				
+			}
+			
+			&-top {
+				flex-direction: column;
+				
+				&-col {
+					width: 100%;
+					
+					&--left {
+						order: 2;
+					}
+					
+					&--right {
+						order: 1;
+					}
+					
+				}
+				
+			}
+			
+			&__name-prod {
+				margin-top: 10px;
+			}
+			
+			&-answers {
+				display: none;
+				margin-top: 25px;
+				padding-left: 25px;
+			}
+			
+		}//product reviews
+		
+		.rating__item {
+			width: 10px;
+			height: 10px;
+		}
+		
+		.btn {
+			width: 100%;
+		}
+		
+	}
+	
+}

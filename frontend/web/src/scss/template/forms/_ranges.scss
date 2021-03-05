@@ -1,0 +1,76 @@
+// Кастомизируем реннж
+.noUi-target {
+  height: 2px;
+  background: transparent;
+  border-radius: 0;
+  border: 0;
+  box-shadow: none;
+  position: relative;
+}
+
+.noUi-connects {
+  border-radius: 0;
+  height: 2px;
+  background-color: $gray4;
+}
+
+.noUi-connect {
+  background-color: $red;
+}
+
+.noUi-horizontal .noUi-handle {
+  width: 17px;
+  height: 11px;
+  top: -4px;
+  cursor: pointer;
+  background: none;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -1px;
+    width: 11px;
+    height: 11px;
+    background: $red;
+    display: block;
+    transform: rotate(90deg) skew(20deg);
+  }
+
+  .noUi-touch-area {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: -10px;
+    top: -9px;
+  }
+}
+
+.noUi-horizontal .noUi-tooltip {
+  bottom: 27px;
+}
+
+.noUi-handle {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.noUi-handle:before,
+.noUi-handle:after {
+  display: none;
+}
+
+.noUi-tooltip {
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 132%;
+  color: $black2;
+}
+
+

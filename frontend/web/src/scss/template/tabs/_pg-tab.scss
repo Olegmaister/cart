@@ -1,0 +1,41 @@
+.pg-tab {
+  position: relative;
+
+  &__nav {
+    &.active {
+      color: $red;
+    }
+  }
+
+  &__content {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+
+  & .slider-extra-arrows {
+    top: 30px;
+    right: 20px;
+
+    @media (max-width: $tablet-md) {
+      width: auto;
+      top: auto;
+      left: 15px;
+    }
+  }
+
+  & .content-row {
+    @media (max-width: $tablet-md) {
+      margin-bottom: 25px;
+    }
+  }
+
+  & .content-extra {
+    @media (max-width: $tablet-md) {
+      margin-top: 25px;
+    }
+  }
+}

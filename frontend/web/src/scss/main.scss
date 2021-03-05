@@ -1,0 +1,153 @@
+@import "libs/bootstrap";
+/*
+* Global
+*-----------------------------------------------*/
+@import "assets/vars";
+@import "assets/mixin";
+@import "assets/reset";
+@import "assets/animations";
+@import "assets/layout";
+@import "assets/typography";
+@import "assets/base";
+
+
+
+/*
+* Libs
+*-----------------------------------------------*/
+@import "libs/nice-select";
+@import "libs/nouislider";
+@import "libs/slick";
+@import "libs/slick-theme";
+@import "libs/select2";
+@import 'node_modules/microtip/microtip';
+@import 'landing/magnific-popup';
+
+
+
+/*
+* Forms
+*-----------------------------------------------*/
+@import "template/forms/checkout-payer-data";
+@import "template/forms/fields";
+@import "template/forms/promo-form";
+@import "template/forms/selects";
+@import "template/forms/ranges";
+@import "template/form";
+
+/*
+*   Components
+*-----------------------------------------------*/
+@import "template/video-previews";
+@import "template/subscribe-mail";
+@import "template/buttons";
+@import "template/loader";
+@import "template/hash-tag";
+@import "template/like";
+@import "template/accumulation-progress";
+@import "template/rating";
+
+// Модальные окна
+@import "template/popups/video-modal";
+@import "template/popups/defaults";
+@import "template/popups/popup-call";
+@import "template/popups/popup-size";
+@import "template/popups/popup-cart";
+@import "template/popups/popup-cart-header";
+@import "template/popups/popup-login";
+@import "template/popups/popup-shop";
+@import "template/popups/popup-quik-buy";
+@import "template/popups/popup-review";
+@import "template/popups/popup-shop-video";
+@import "template/popups/popup-map";
+
+// Карточки
+@import "template/cards/product-card";
+@import "template/cards/product-card-view-2";
+@import "template/cards/product-card-view-3";
+@import "template/cards/card-categories";
+@import "template/cards/cart-card";
+@import "template/cards/journal-card";
+@import "template/cards/labels/labels";
+
+// Слайдеры
+@import "template/sliders/hero-sliders";
+@import "template/sliders/category-slider";
+@import "template/sliders/product-slider";
+@import "template/sliders/modal-slider";
+@import "template/sliders/extra";
+@import "template/sliders/table-size-slider";
+
+// Табы
+@import "template/tabs/product-tabs";
+@import "template/tabs/pg-tab";
+@import "template/brands";
+@import "template/tabs/posts-tabs";
+
+// Сайдбары
+@import "template/sidebars/sidebars";
+@import "template/sidebars/sidebar-filters/prices";
+@import "template/sidebars/sidebar-filters/colors";
+@import "template/sidebars/sidebar-filters/cat";
+
+// Таблицы
+@import "template/tables/table";
+
+// Пагинации
+@import "template/paginations";
+
+// Аккордионы
+@import "template/accordions";
+
+// Хлебные крошки
+@import "template/breadcrumbs";
+
+
+/*Блоки*/
+@import "blocks/hero-slider";
+@import "blocks/category-slider";
+@import "blocks/brands-slider";
+@import "blocks/catalog-cards";
+@import "blocks/forms";
+@import "blocks/subscribe-yt";
+@import "blocks/card-head";
+@import "blocks/page-content";
+@import "template/header";
+@import "template/big-catalog-menu";
+@import "template/subscribe-yt";
+@import "template/post-prev";
+@import "template/elements";
+@import "template/timers/actions";
+@import "template/footer";
+@import "assets/adapts";
+
+
+/*Страницы*/
+@import "pages/categories";
+@import "pages/category";
+@import "pages/product";
+@import "pages/login-and-register";
+@import "pages/checkout";
+@import "pages/brands";
+@import "pages/journal";
+@import "pages/journal-one";
+@import "pages/account/account";
+@import "pages/account/favorites";
+@import "pages/account/orders";
+@import "pages/account/accumulative";
+@import "pages/account/reserve";
+@import "pages/error";
+@import "pages/new-password";
+@import "pages/thank-page";
+@import "pages/actions";
+@import "pages/shop";
+@import "pages/about";
+@import "pages/contacts";
+@import "pages/conditions";
+@import "pages/delivery";
+@import "pages/discount";
+@import "pages/warrantly";
+@import "pages/compare";
+@import "pages/reviews";
+@import "pages/videos";
+@import "pages/quality-controll";

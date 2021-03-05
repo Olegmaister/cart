@@ -1,0 +1,945 @@
+.checkout {
+  background-color: $bg;
+  padding-bottom: 110px;
+
+  &-title {
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    @media (max-width: $tablet-sm) {
+      margin-top: 30px;
+    }
+  }
+
+  &-main {
+    display: flex;
+  }
+
+  &-body {
+    width: 50%;
+    padding-right: 10px;
+    position: relative;
+
+    @media (max-width: $desktop-sm) {
+      width: 100%;
+      padding-right: 0;
+    }
+  }
+
+  &-aside {
+    width: 50%;
+    padding-left: 10px;
+
+    @media (max-width: $desktop-sm) {
+      display: none;
+    }
+  }
+
+  & .sticky-cart {
+    position: sticky;
+    top: 20px;
+  }
+
+  &-cart {
+    padding: 24px 10px 24px 24px;
+    background-color: $white;
+    position: relative;
+
+    @media (min-width: 992px) {
+      min-height: 302px;
+    }
+
+    &__title {
+      margin-bottom: 8px;
+    }
+
+    &__item {
+      max-height: 305px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding-right: 10px;
+      @include scroll-bar-sm;
+
+      .wrapper-popup-cart & {
+        max-height: 365px;
+        min-height: 100px;
+        height: 100%;
+
+        @media (max-width: $tablet-md-s) {
+          max-height: none;
+          min-height: 100px;
+          height: calc(100% - 121px);
+        }
+      }
+
+      .cart-is-empty .wrapper-popup-cart & {
+
+        @media (max-width: $mobile-lg) {
+          max-height: calc(100vh - 104px);
+          min-height: 100px;
+          height: calc(100vh - 104px);
+        }
+      }
+    }
+  }
+
+  &-promo {
+    margin-top: 16px;
+  }
+
+  &-total-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 10px;
+
+    .title-h3 {
+      font-size: 14px;
+
+      @media (min-width: 768px) {
+        font-size: 16px;
+      }
+
+      @media (min-width: 1200px) {
+        font-size: 18px;
+      }
+    }
+
+    & .title--red {
+      letter-spacing: 0;
+    }
+
+    &__col {
+      flex-grow: 1;
+      flex-basis: 0;
+      max-width: 100%;
+      padding-right: 10px;
+
+      &:last-child {
+        padding-right: 0;
+        text-align: right;
+
+        @media (max-width: 768px) {
+          flex: 0 0 100%;
+          max-width: 100%;
+          margin-top: 10px;
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  &-user-status-btns {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 16px;
+
+    @media (max-width: $tablet-md-s) {
+      padding-left: 0;
+      padding-right: 0;
+      margin-bottom: 24px;
+    }
+  }
+
+  &-payer {
+    background-color: $white;
+    padding: 25px 30px;
+
+    @media (max-width: $tablet-md-s) {
+      margin-left: -16px;
+      width: 100vw;
+      padding: 10px 16px 25px 16px;
+    }
+
+    &-data {
+
+      @media (max-width: $tablet-md-s) {
+        margin-top: 45px;
+      }
+
+      &__registration {
+
+        @media (max-width: $mobile-sm) {
+          margin-bottom: 16px;
+        }
+      }
+
+      &__recipient {
+        cursor: pointer;
+
+        @media (max-width: $tablet-md-s) {
+          font-size: 16px;
+        }
+
+        &.is-open {
+          background-image: linear-gradient(to right, $red 80%, transparent 20%);
+          color: $red;
+        }
+
+        &:focus,
+        &:hover {
+          background-image: linear-gradient(to right, $red 80%, transparent 20%);
+          color: $red;
+        }
+      }
+
+      &__title {
+        margin-bottom: 12px;
+      }
+    }
+
+    & .login-buttons {
+      margin-bottom: 30px;
+    }
+
+    &.has-error-password,
+    &.has-error-accept,
+    &.has-error-ru {
+      position: relative;
+
+      &:after {
+        content: 'Заполните пожалуйста обязательные поля!';
+        position: absolute;
+        bottom: -36px;
+        left: 0;
+        display: block;
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+        text-align: center;
+        font-family: "Oswald", sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 132%;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: $red;
+
+        @media (max-width: $tablet-md-s) {
+          bottom: -48px;
+        }
+      }
+    }
+
+    &.has-error-accept {
+      &:after {
+        content: 'Подтвердите ознакомление с пользовательским соглашением!';
+      }
+    }
+
+    &.has-error-accept.has-error-ru {
+      &:after {
+        content: 'Заполните обязательные поля и подтвердите ознакомление с пользовательским соглашением!';
+      }
+    }
+
+    &.has-error-password {
+      &:after {
+        content: 'Убедитесь, что вы заполнили все данные! Пароль не должен быть короче 6 символов!' !important;
+      }
+    }
+  }
+
+  &-recipient {
+    margin-top: 60px;
+    position: relative;
+    display: none;
+
+    @media (max-width: $tablet-md-s) {
+      margin-top: 70px;
+    }
+
+    &.is-open {
+      display: block;
+    }
+
+    &__title {
+      margin-bottom: 16px;
+    }
+
+    &__data {
+      background-color: $white;
+      position: relative;
+      padding: 30px;
+      background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23333' stroke-width='3' stroke-dasharray='15' stroke-dashoffset='40' stroke-linecap='square'/%3e%3c/svg%3e");
+
+      @media (max-width: $tablet-md-s) {
+        padding: 24px 20px 14px;
+      }
+
+      &-title {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 26px;
+      }
+    }
+
+    &__close {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      border: 0;
+      background-color: transparent;
+
+      &-icon {
+        fill: $black2;
+        transition: fill .2s ease-in-out;
+
+        &:focus,
+        &:hover {
+          fill: $red;
+        }
+      }
+    }
+
+    & .field {
+      margin-bottom: 16px;
+    }
+
+    &.has-error-ru {
+      position: relative;
+
+      &:after {
+        content: 'Заполните пожалуйста обязательные поля!';
+        position: absolute;
+        bottom: -36px;
+        left: 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-family: "Oswald", sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 132%;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: $red;
+      }
+    }
+  }
+
+  &-abroad {
+    margin-top: 40px;
+    display: none;
+
+    &.is-open {
+      display: block;
+    }
+
+    &__title {
+      margin-bottom: 26px;
+    }
+  }
+
+  &-payment {
+
+    &.has-error-choice {
+      position: relative;
+
+      &:after {
+        content: attr(data-error-choice);
+        position: absolute;
+        bottom: -36px;
+        left: 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-family: "Oswald", sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 132%;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: $red;
+      }
+    }
+
+    &.has-error-empty {
+      position: relative;
+
+      &:after {
+        content: attr(data-error-empty);
+        position: absolute;
+        bottom: -36px;
+        left: 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-family: "Oswald", sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 132%;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: $red;
+      }
+    }
+  }
+
+  &-delivery {
+    &.has-error-choice {
+      position: relative;
+
+      &:after {
+        content: attr(data-error-choice);
+        position: absolute;
+        bottom: -36px;
+        left: 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-family: "Oswald", sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 132%;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: $red;
+      }
+    }
+  }
+
+  &-payment,
+  &-delivery {
+    margin-top: 60px;
+    display: none;
+
+    &.is-open {
+      display: block;
+    }
+
+    &__title {
+      margin-bottom: 26px;
+    }
+
+    &__choices {
+      padding: 35px 30px;
+      background-color: $white;
+
+      @media (max-width: $tablet-md-s) {
+        width: 100vw;
+        margin-left: -16px;
+        padding: 30px 16px 0 30px;
+      }
+    }
+
+    &__item {
+      padding-left: 20px;
+    }
+
+    &__item + &__item {
+      margin-top: 42px;
+    }
+
+
+    &__label {
+      font-family: "Roboto", sans-serif;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 19px;
+      //line-height: 147%;
+      color: $black2;
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        color: $red;
+      }
+    }
+
+    &__logo {
+      height: 16px;
+      width: auto;
+      object-fit: contain;
+      margin-left: 20px;
+    }
+
+    &__input {
+      @include visual-hidden;
+
+      &:checked + span:after {
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      &-fake {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border: 1px solid $gray6;
+        border-radius: 50%;
+        position: absolute;
+        top: 1px;
+        left: -30px;
+
+        &:after {
+          content: '';
+          display: block;
+          width: 8px;
+          height: 8px;
+          background-color: $red;
+          border-radius: 50%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) scale(0);
+        }
+      }
+
+      &:checked + span + .checkout-payment__label-text,
+      &:checked + span + .checkout-delivery__label-text {
+        color: $red;
+      }
+    }
+
+    .field-paymentform-typepayment &__logo {
+      height: 24px;
+      width: auto;
+      object-fit: contain;
+      padding-left: 6px;
+    }
+
+    .field-paymentform-typepayment &__input-fake {
+      left: 0;
+      top: 4px;
+    }
+
+    .field-paymentform-typepayment &__label {
+      width: 27%;
+      height: 24px;
+      display: flex;
+      align-items: center;
+    }
+
+
+    &__download {
+      margin-bottom: 30px;
+      display: none;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+
+      &.is-open {
+        display: inline-block;
+      }
+    }
+
+    &__pay-part {
+
+      &.is-open {
+        display: block;
+      }
+
+      &-description {
+        width: 100%;
+        padding: 16px 80px 16px 70px;
+        border: 2px solid $gray5;
+        position: relative;
+        font-family: "Roboto", sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 168%;
+        color: $gray4;
+        margin-bottom: 48px;
+
+        @media (max-width: $tablet-md-s) {
+          padding: 16px 25px 16px 50px;
+        }
+
+        &:after {
+          content: '';
+          display: block;
+          width: 32px;
+          height: 32px;
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3crect x='18.0361' y='24.4364' width='3.49091' height='10.4727' transform='rotate(180 18.0361 24.4364)' fill='%23EF1B1B'/%3e%3crect x='18.0361' y='11.0545' width='3.49091' height='3.49091' transform='rotate(180 18.0361 11.0545)' fill='%23EF1B1B'/%3e%3ccircle cx='16' cy='16' r='15' stroke='%23EF1B1B' stroke-width='2'/%3e%3c/svg%3e");
+          background-repeat: no-repeat;
+          background-size: contain;
+          position: absolute;
+          top: 16px;
+          left: 20px;
+
+          @media (max-width: $tablet-md-s) {
+            width: 18px;
+            height: 18px;
+            top: 16px;
+            left: 20px;
+          }
+        }
+      }
+
+      &-range {
+        width: 100%;
+        margin-bottom: 30px;
+
+        &:after {
+          content: attr(data-max-text);
+          position: absolute;
+          top: 10px;
+          right: 0;
+          font-family: "Roboto", sans-serif;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 132%;
+          color: $black2;
+        }
+
+        & .noUi-tooltip {
+
+          &:after {
+            content: ' мес';
+          }
+        }
+      }
+    }
+
+    &__description {
+      font-family: "Roboto", sans-serif;
+      font-weight: normal;
+      @include adaptiv-font(14, 12);
+      line-height: 168%;
+      color: $gray4;
+      margin-top: 10px;
+    }
+
+    &__submit {
+      width: 304px;
+      margin: 0 auto;
+    }
+
+    &__form {
+      display: none;
+      margin-top: 20px;
+
+      @media (max-width: $tablet-md-s) {
+        margin-left: -52px;
+      }
+
+      &.is-open {
+        display: flex;
+      }
+
+      & .field {
+        margin-bottom: 16px;
+      }
+
+      &__prices {
+        padding-left: 30px;
+      }
+    }
+
+    &__address {
+      margin-top: 8px;
+
+      &-map {
+        cursor: pointer;
+
+        &:focus,
+        &:hover {
+          background-image: linear-gradient(to right, $red 80%, transparent 20%);
+          color: $red;
+        }
+      }
+    }
+
+    & .js-delivery-office {
+      display: none;
+
+      &.is-show {
+        display: flex;
+
+        span {
+          @media (max-width: $tablet-md-sl) {
+            width: 100%;
+            overflow: hidden;
+          }
+        }
+
+      }
+    }
+  }
+
+  &-delivery {
+    &__submit {
+      margin: 30px auto 0;
+
+      @media (max-width: $tablet-md-s) {
+        margin: 30px 0 0 -30px;
+        width: 100vw;
+        height: 64px;
+      }
+
+      & .btn__inner {
+
+        @media (max-width: $tablet-md-s) {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+// Форма для отправки забугор
+.abroad-form {
+  padding: 33px 30px 38px 54px;
+  background-color: $white;
+
+  @media (max-width: $tablet-md-s) {
+    width: 100vw;
+    margin-left: -16px;
+    padding: 33px 16px 0 16px;
+  }
+
+  &__title {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 147%;
+    color: $black2;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 168%;
+    color: $gray4;
+    margin-bottom: 20px;
+  }
+
+  & .field {
+    margin-bottom: 16px;
+  }
+
+  &__prices {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+
+    &-country {
+      display: inline-block;
+      margin-left: 6px;
+    }
+
+    &-euro {
+      display: inline-block;
+      margin-left: 6px;
+    }
+
+    & .form-group {
+      width: 50px;
+
+      @media (max-width: $desktop-md) {
+        height: 20px;
+      }
+    }
+
+    & #foreignersupform-cost {
+      border: 0;
+      font-family: "Oswald", sans-serif;
+      font-weight: 500;
+      @include adaptiv-font(12, 10);
+      line-height: 132%;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: $red;
+      text-align: right;
+      padding-left: 0;
+      pointer-events: none;
+    }
+  }
+
+  &__payment-method {
+    display: flex;
+    align-items: center;
+    margin-top: 36px;
+
+    &-title {
+      font-family: "Roboto", sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      @include adaptiv-font(14, 11);
+      line-height: 147%;
+      color: $black2;
+      margin-right: 20px;
+    }
+
+    &-img {
+      height: 16px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    &-img + &-img {
+      margin-left: 6px;
+    }
+  }
+
+  &__about-payment {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: $tablet-md-s) {
+      flex-wrap: wrap;
+    }
+
+    &-img {
+      height: 36px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    &-text {
+      margin-left: 30px;
+      font-family: "Roboto", sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      @include adaptiv-font(14, 12);
+      line-height: 168%;
+      color: $gray4;
+
+      @media (max-width: $tablet-md-s) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__textarea {
+    margin-top: 20px;
+    height: 112px;
+
+    & textarea {
+      resize: none;
+    }
+  }
+
+  .checkout-abroad &__submit {
+    width: 304px;
+    margin: 36px auto 0;
+
+    @media (max-width: $tablet-md-s) {
+      margin: 30px 0 0 -16px;
+      width: 100vw;
+      height: 64px;
+    }
+
+    & .btn__inner {
+      @media (max-width: $tablet-md-s) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .checkout-payment &__submit {
+    width: 304px;
+    margin: 36px auto 0;
+
+    @media (max-width: $tablet-md-s) {
+      margin: 30px 0 0 -30px;
+      width: 100vw;
+      height: 64px;
+    }
+
+    & .btn__inner {
+      @media (max-width: $tablet-md-s) {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.field-paymentform-typepayment {
+
+  & #paymentform-typepayment {
+    margin-bottom: 30px;
+
+    &:empty {
+      margin-bottom: 0;
+    }
+  }
+
+  & .checkout-payment__label {
+    width: 25%;
+
+    @media (max-width: $tablet-md-s) {
+      width: 100%;
+    }
+
+    & + .checkout-payment__label {
+      @media (max-width: $tablet-md-s) {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+#paymentform-typepayment {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (max-width: $tablet-md-s) {
+    //margin-left: -16px;
+  }
+}
+
+.js-order-cost-office-np:empty + .title-h6.title--red {
+  display: none;
+}
+
+.checkout-delivery__form {
+  .field-required {
+    left: 40px;
+  }
+}
+
+.field-orderform-comment {
+  .textarea-1 {
+    margin-top: 30px;
+    height: 100px;
+  }
+}
+
+
+.has-error-empty {
+  position: relative;
+
+  &:after {
+    content: 'Заполните пожалуйста обязательные поля!';
+    position: absolute;
+    bottom: -36px;
+    left: 0;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-family: "Oswald", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 132%;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $red;
+  }
+}
+
+.icon-info {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3crect x='9' y='12' width='2' height='5' transform='rotate(180 9 12)' fill='%23EF1B1B'/%3e%3crect x='9' y='6' width='2' height='2' transform='rotate(180 9 6)' fill='%23EF1B1B'/%3e%3ccircle cx='8' cy='8' r='7' stroke='%23EF1B1B' stroke-width='2'/%3e%3c/svg%3e");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}

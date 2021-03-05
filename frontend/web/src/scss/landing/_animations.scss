@@ -1,0 +1,24 @@
+@keyframes dropdown-1 {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: rotate(-30deg) translateY(-900px);
+  }
+  to {
+    transform: rotate(-30deg) translateY(900px);
+  }
+}
+
+@keyframes slide-big {
+  from {
+    transform: rotate(-30deg) translateY(-1500px);
+  }
+  to {
+    transform: rotate(-30deg) translateY(1000px);
+  }
+}

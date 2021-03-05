@@ -1,0 +1,56 @@
+.timer-actions {
+	
+	&-count {
+		width: 100%;
+	}
+	
+	.separator {
+		display: none;
+	}
+	
+	.countdown {
+		display: flex;
+		margin-left: -15px;
+	}
+	
+	.item {
+		display: flex;
+		flex-direction: column;
+		width: 25%;
+		padding-left: 15px;
+		
+		&-wrap {
+			display: flex;
+			justify-content: space-around;
+		}
+		
+		&-bg {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: $blue;
+			width: 47%;
+			height: 64px;
+			
+			font-size: 28px;
+			line-height: 142%;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+			text-align: center;
+			color: $white;
+		}
+	}
+	
+	.label {
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 132%;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: $gray4;
+		text-align: center;
+		
+		display: block;
+		margin-top: 10px;
+	}
+}

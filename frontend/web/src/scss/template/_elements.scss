@@ -1,0 +1,591 @@
+.el-icon-txt {
+  display: flex;
+  align-items: center;
+
+  &__media {
+    display: flex;
+    margin-right: 10px;
+
+    img {
+      display: block;
+    }
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 147%;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $black;
+  }
+}
+
+/****** Styles CHECK  */
+.check-color {
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  input[type="checkbox"] + label {
+    font-size: 16px;
+    color: #666;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+
+  input[type="checkbox"] + label::before {
+    content: "";
+    display: inline-block;
+    border: 1px solid $gray6;
+    height: 16px;
+    width: 16px;
+    background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='10' height='10' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M8.445 3.763L3.813 8.396 1 5.682' stroke='%23fff' stroke-width='2'/%3e%3c/svg%3e") no-repeat center 0;
+    background-size: 80%;
+  }
+
+  input[type="checkbox"]:checked + label::before {
+    background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='10' height='10' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M8.445 3.763L3.813 8.396 1 5.682' stroke='%23EF1B1B' stroke-width='2'/%3e%3c/svg%3e") no-repeat center 0;
+    background-size: 80%;
+  }
+}
+
+.check-color__item {
+  display: block;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  margin-left: 15px;
+
+  &--gray {
+    background-color: #C4C4C4;
+  }
+
+  &--green {
+    background-color: #3D5A36;
+  }
+
+  &--yellow {
+    background-color: #CEBDA2;
+  }
+
+  &--black {
+    background-color: #000;
+  }
+}
+
+//style check txt
+.check-txt {
+
+  padding-right: 40px;
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  input[type="checkbox"] + label {
+    font-size: 16px;
+    color: #666;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+
+  input[type="checkbox"] + label::before {
+    content: "";
+    display: inline-block;
+    border: 1px solid $gray6;
+    height: 16px;
+    width: 16px;
+    min-width: 16px;
+    min-height: 16px;
+    background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='10' height='10' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M8.445 3.763L3.813 8.396 1 5.682' stroke='%23fff' stroke-width='2'/%3e%3c/svg%3e") no-repeat center 0;
+    background-size: 80%;
+  }
+
+  input[type="checkbox"]:checked + label::before {
+    background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='10' height='10' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M8.445 3.763L3.813 8.396 1 5.682' stroke='%231D2023' stroke-width='2'/%3e%3c/svg%3e") no-repeat center 0;
+    background-size: 80%;
+  }
+
+  &__item {
+    color: $black2;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 132%;
+    letter-spacing: 0.06em;
+    margin-left: 14px;
+
+    &:hover {
+      color: $red;
+    }
+  }
+
+}
+
+//SIZE SWITCH
+.sizes-switch {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -4px;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    min-height: 33px;
+    border: 1px solid $gray6;
+    padding: 5px;
+    margin-left: 6px;
+    margin-bottom: 6px;
+    color: $gray6;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    cursor: default;
+
+    &--stock {
+      color: $black2;
+      border-color: $black2;
+      cursor: pointer;
+
+      &:hover {
+        color: $red;
+        border-color: $red;
+      }
+    }
+
+    &--active {
+      color: $red;
+      border-color: $red;
+      cursor: pointer;
+    }
+
+  }
+
+  &--big {
+    margin-left: -5px;
+
+    .sizes-switch__item {
+      min-width: 40px;
+      min-height: 40px;
+      margin: 5px;
+    }
+
+  }
+
+}
+
+//SIZE
+
+.switch-color {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -5px;
+
+  &__item {
+    cursor: pointer;
+    width: 38px;
+    height: 38px;
+    margin: 5px;
+    border: 2px solid transparent;
+
+    &--gray {
+      background-color: #C4C4C4;
+    }
+
+    &--green {
+      background-color: #3D5A36;
+    }
+
+    &--yellow {
+      background-color: #CEBDA2;
+    }
+
+    &--black {
+      background-color: #000;
+    }
+
+    &--active {
+      border-color: $red;
+    }
+
+  }
+
+}
+
+//prices
+.price {
+  text-transform: uppercase;
+  display: inline-block;
+
+  &--new {
+    font-size: 28px;
+    line-height: 1;
+    color: $red;
+
+    span:first-child {
+      font-size: 14px;
+    }
+
+    &-big {
+      font-weight: 300;
+      font-size: 64px;
+
+      span:first-child {
+        font-size: 32px;
+      }
+    }
+  }
+
+  &--old {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 132%;
+    letter-spacing: 0.06em;
+    color: $gray4;
+    position: relative;
+    margin-left: 14px;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 130%;
+      height: 1px;
+      background-color: rgba(239, 27, 27, 0.5);
+      position: absolute;
+      top: 50%;
+      left: -15%;
+    }
+
+    &-big {
+      letter-spacing: 0.08em;
+      font-size: 16px;
+    }
+  }
+}
+
+.amount-and-price {
+  display: flex;
+
+  &-col {
+
+  }
+
+  &__txt {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 147%;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $black;
+  }
+}
+
+//other
+.el-size {
+  min-width: 32px;
+  min-height: 32px;
+  cursor: pointer;
+  border: 1px solid $gray6;
+  padding: 5px;
+  display: inline-block;
+  margin-left: 4px;
+  color: $gray6;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  -webkit-transition: all 0.25s linear 0s;
+  -o-transition: all 0.25s linear 0s;
+  transition: all 0.25s linear 0s;
+
+  &:hover {
+    border-color: $red;
+    color: $red;
+  }
+}
+
+.el-color {
+  min-width: 32px;
+  min-height: 32px;
+  cursor: pointer;
+  background-color: $green;
+
+  &--gray {
+    background-color: #C4C4C4;
+  }
+
+  &--green {
+    background-color: #3D5A36;
+  }
+
+  &--yellow {
+    background-color: #CEBDA2;
+  }
+
+  &--black {
+    background-color: #000;
+  }
+}
+
+.el-change-amount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid $gray5;
+
+  &__col {
+    text-align: center;
+    width: 28px;
+    height: 28px;
+    border-left: 2px solid $gray5;
+
+    &:first-child {
+      border: none;
+    }
+  }
+
+  &__but {
+    cursor: pointer;
+    background: none;
+    color: $gray4;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 132%;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    @include transition();
+
+    &:hover {
+      color: $red;
+    }
+
+    &--minus {
+      line-height: 26px;
+    }
+  }
+
+  &__input {
+    text-align: center;
+    border: none;
+    width: 100%;
+    height: 100%;
+    color: $gray4;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 132%;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+}
+
+//ACCOUNTS
+.account-user-info {
+  display: flex;
+  align-items: center;
+  background-color: $gray7;
+
+  &-media {
+    cursor: pointer;
+    width: 46px;
+    height: 48px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      .account-user-info__hover-img {
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: $desktop-sm) {
+      width: 35px;
+      height: 35px;
+    }
+
+    @media (max-width: $tablet-lg) {
+      width: 32px;
+      height: 32px;
+    }
+
+    @media (max-width: $tablet-md-sl) {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  &__hover-img {
+    position: absolute;
+    opacity: 0;
+    top: calc(50% - 9px);
+    left: calc(50% - 9px);
+    @include transition();
+
+    ._path {
+      fill: #434343;
+    }
+
+    @media (max-width: $tablet-md-sl) {
+      height: 18px;
+      left: 70px;
+      opacity: 1;
+
+      ._path {
+        fill: $gray2;
+      }
+    }
+
+  }
+
+  &__avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 132%;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $black;
+    padding-left: 20px;
+
+    @media (max-width: $desktop-sm) {
+      font-size: 10px;
+      padding-left: 10px;
+    }
+
+    @media (max-width: $tablet-md-sl) {
+      font-size: 12px;
+      padding-left: 75px;
+    }
+  }
+}
+
+.info-block {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 708px;
+  padding: 8px 20px 8px 63px;
+  background-color: $black;
+
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 138%;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $white;
+  word-break: break-word;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    width: 24px;
+    height: 24px;
+    background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill='%23EF1B1B' d='M11 7h2v7h-2zM11 16h2v2h-2z'/%3e%3ccircle cx='12' cy='12' r='11' stroke='%23EF1B1B' stroke-width='2'/%3e%3c/svg%3e") no-repeat 0 0;
+    background-size: contain;
+  }
+
+  @media (max-width: $tablet-md-sl) {
+    font-size: 10px;
+  }
+
+  &--trans {
+    background-color: transparent;
+    padding-left: 55px;
+
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 168%;
+    text-transform: initial;
+    color: $black2;
+
+    &:before {
+      left: 5px;
+    }
+  }
+
+}
+
+//PAY ICONS
+.pay-icons {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    margin-left: 10px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 80%;
+  }
+}
+
+
+//COUNTRY
+.country-only {
+  position: relative;
+
+  &__icon {
+    width: 51px;
+    height: 32px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='51' height='32' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M31.024 27.58c.17-.068.419-.089.51-.206.133-.113.15-.318.245-.476.234-.353.649-.402 1.03-.536s.925-.255.843-.758c-.018-.291-.24-.599.06-.74.043-.038.084-.034.125-.03.337-.097.678.261.958.367.238.102.48.163.684.18.205.016.58-.036.736.06.239.102.209.472.4.653.303.314.8.272 1.152.507.272.188.26.352.318.646.092.38.378.403.743.474.729.142 1.337-.263 1.902-.63.262-.186.452-.5.748-.6.255-.104 1.031-.04 1.215.223.113.133.059.294-.033.41-.047.08-.095.158-.101.24-.058.202-.033.41-.05.616-.087.572-.605.364-1.03.537-.552.203-.825.015-1.393-.073-.65-.094-.772.392-1.054.824-.373.548-.84.717-1.472.914-.548.162-.632.692-1.067.988-.262.185-.463.127-.65.402-.139.195-.275.35-.526.411-.5.084-.974-.162-1.367-.4-.197-.1-.317-.15-.334-.441-.024-.209.074-.408.128-.569.153-.36.328-1.007.028-1.362-.3-.355-.862-.029-1.264-.144-.443-.12-.805-.728-1.353-.566-.21.066-.265.227-.5.083-.194-.14-.222-.307-.202-.553.064-.285.401-.381.571-.45z' fill='%236AA9CC'/%3e%3cpath d='M1.94 18.893c-.359-.65-.762-1.262-1.572-1.41L0 17.452c.01-.124.06-.244.07-.367.088-.572.407-.96.774-1.425.224-.23.41-.505.434-.792.04.003.085-.034.167-.028.912-.09.379-1.127.52-1.86.199-.934.878-1.706 1.66-2.221.874-.632 2.279-1.22 1.816-2.622-.096-.339-.44-.657-.577-.999-.175-.386-.305-.81-.476-1.237-.137-.342-.322-.606-.414-.985.62-.032 1.208-.191 1.728-.52.782-.516 1.363-1.089 2.326-1.3.585-.117 1.406-.092 1.965.12.797.312 1.244.886 2.19.88.947-.005 1.688-.523 2.653-.238.562.17.787.437 1.36.483.367.03.772.105 1.147.053.868-.053 1.477.038 2.322.272s2.31.933 3.102.294c.707-.604.17-1.598.874-2.161.615-.488 1.992-.21 2.153-1.19l.003-.04c.399.156.92.323 1.138.175.431-.254.178-1.184.729-1.388.21-.065.442.12.688.14.327.026.5-.084.758-.228.517-.289 1.055-.328 1.62-.199.283.065.645.177.873.402.229.226.205.513.349.773.137.342.423.365.648.632.147.218.171.427.192.677.087.462.099 1.331.535 1.532.238.102.541-.08.786-.06.327.027.525.126.757.31.504.372.791.892 1.034 1.45.14.3.315.686.547.87.345.318.521.167.933.16.412-.008.943.035 1.345.15.32.11.546.376.917.365.701-.026.887-.796 1.592-.863.909-.05 1.322.439 1.976.989.887.734 1.738.39 2.763.432.493-.001 1.031-.04 1.464.202.392.239.617.505 1.06.624.804.23 2.303.519 2.006 1.652-.068.325-.251.559-.28.928-.06.74.336 1.434.525 2.152.123.506.247 1.013.248 1.509-.009.62-.39.754-.9.96-1.184.4-3.076.907-3.24 2.424-.04.493.114.63-.25 1.055-.088.075-.135.154-.224.23-.4.38-.907.546-1.383.837-.259.145-1.36 1.047-1.535.66-.974-.161-1.346.884-2.03 1.2-.469.21-1.154.03-1.589.325-.217.148-.19.315-.366.466-.225.23-.174.11-.467.17-.585.117-.642.319-.971.83-.241.435-.629.651-1.123.652-.783.02-1.62-.297-2.373-.152-.293.059-.47.21-.646.36l-.354.303c-.35.26-.796.183-1.245.146-.981-.08-2.244.272-3.239-.14-.197-.099-.43-.283-.45-.533-.021-.25.142-.236.322-.428.452-.501.274-.847-.274-1.18-.39-.28-.794-.355-1.189-.056-.306.223-.57.946-1.037.618-.351-.235-.303-1.844-.867-.98-.285.473-.515 1.28-.394 1.828.052.377.373.982-.059 1.236-.428.213-.835-.358-1.29-.312-.163.483-.07.862-.025 1.321.035.582-.268.764-.822 1.008-.34.138-.803.265-.717.727.062.253.338.4.315.688a.683.683 0 01-.244.476c-.43-.78-1.2-.429-1.968-.078-.769.35-1.423.297-1.836-.191.06-.243.125-.527.26-.682.292-.555.816-.926 1.224-1.389.23-.312.42-.627.413-1.041.023-.288-.152-.674-.132-.92.074-.408.133-.114.378-.094.286.024.422-.13.674-.193.333-.055.817.067 1.144.094.572.046.78.022.666-.608-.049-.417-.131-.92-.483-1.156-.35-.235-.841-.275-1.053-.706-.212-.43.073-.904-.183-1.297-.297-.396-.757-.31-.918-.86-.23-.722.242-1.469-.42-1.937-.74-.515-1.508-.164-2.312-.395-.685-.18-1.16-.922-1.886-1.105-.405-.074-.704.067-1.082.16-.377.093-.704.067-1.113.033-.695-.056-.765.31-.84.717-.653-.053-1.102.407-1.629.819-.652.442-1.51.869-2.265 1.055-1.007.249-1.206-.346-2.047-.622-.603-.173-1.43-.116-2.081-.21-.606-.133-1.263-.145-1.876-.195-.246-.02-.648-.136-.9-.074-.044.038-.084.035-.129.073z' fill='%236AA9CC'/%3e%3c/svg%3e") no-repeat 0 0;
+    background-size: contain;
+  }
+
+  &__txt {
+    padding-left: 66px;
+    color: $blue;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding-top: 10px;
+  }
+}
+
+/*================================================================================
+                                    ADAPTS
+================================================================================*/
+@media (max-width: 766px) {
+  .el-icon-txt {
+    &__name {
+      font-size: 18px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .pay-icons__item {
+    margin-left: 20px;
+  }
+
+  .pay-icons__img {
+    width: 100%;
+  }
+
+  .check-txt__item {
+    margin-left: 18px;
+  }
+
+}

@@ -1,0 +1,64 @@
+/*
+Error: Undefined variable: "$white".
+        on line 24 of E:\job\servers\new\OSPanel\domains\prof-repository\frontend\web\css\blocks\product-card.scss
+
+19: 	padding-bottom: 20px;
+20:     position: relative;
+21: }
+22: .product-card {
+23:     position: relative;
+24: 	background-color: $white;
+25: 	height: 448px;
+26: 	padding: 26px 20px;
+27: 
+28:     -webkit-transition: all 0.25s linear 0s;
+29:     -moz-transition: all 0.25s linear 0s;
+
+Backtrace:
+E:\job\servers\new\OSPanel\domains\prof-repository\frontend\web\css\blocks\product-card.scss:24
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/variable.rb:49:in `_perform'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/node.rb:50:in `perform'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `with_base'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `visit'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `block (2 levels) in visit_rule'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `map'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `block in visit_rule'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:442:in `visit_rule'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `with_base'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `visit'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:52:in `map'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:161:in `visit'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:10:in `visit'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/root_node.rb:36:in `css_tree'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/root_node.rb:20:in `render'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:290:in `render'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:400:in `run'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:63:in `process_result'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/exec/base.rb:52:in `parse'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/lib/sass/exec/base.rb:19:in `parse!'
+E:/programs/Koala/rubygems/gems/sass-3.5.2/bin/sass:13:in `<top (required)>'
+E:/programs/Koala/bin/sass:22:in `load'
+E:/programs/Koala/bin/sass:22:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined variable: \"$white\".\A         on line 24 of E:\job\servers\new\OSPanel\domains\prof-repository\frontend\web\css\blocks\product-card.scss\A \A 19: 	padding-bottom: 20px;\A 20:     position: relative;\A 21: }\A 22: .product-card {\A 23:     position: relative;\A 24: 	background-color: $white;\A 25: 	height: 448px;\A 26: 	padding: 26px 20px;\A 27: \A 28:     -webkit-transition: all 0.25s linear 0s;\A 29:     -moz-transition: all 0.25s linear 0s;"; }

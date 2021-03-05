@@ -1,0 +1,70 @@
+.modal-content {
+	&-row {
+		&--top {
+			margin-bottom: 30px;
+		}
+		&--bot {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+		}
+	}
+
+	&-col {
+		width: 50%;
+
+		& + & {
+
+			@media (max-width: $tablet-md) {
+				margin-top: 24px;
+			}
+		}
+
+		@media (max-width: $tablet-md) {
+			width: 100%;
+			text-align: center;
+		}
+
+		&--right {
+			display: flex;
+			justify-content: flex-end;
+
+			@media (max-width: $tablet-md) {
+				justify-content: center;
+			}
+		}
+	}
+
+	&__btn-size {
+		width: 100%;
+		height: 48px;
+	}
+}
+
+.modal-size-table {
+	display: none;
+	
+	&__img {
+		display: block;
+		width: 100%;
+	}
+}
+
+.modal--size {
+	width: 570px;
+	flex-direction: column;
+
+	@media (max-width: $tablet-md) {
+		width: 100%;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	&.modal .modal__title {
+
+		@media (max-width: $tablet-md) {
+			padding-bottom: 30px;
+		}
+	}
+
+}

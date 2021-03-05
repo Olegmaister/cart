@@ -1,0 +1,60 @@
+
+// Навигация табов
+.content-nav {
+
+  &__item {
+    display: inline-block;
+    color: $gray4;
+    font-weight: bold;
+    font-size: 12px;
+    margin-right: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    flex: 0 0 auto;
+
+    @media (min-width: 576px) {
+      margin-left: 25px;
+      font-size: 14px;
+    }
+
+    @media (min-width: 992px) {
+      margin-left: 35px;
+      font-size: 18px;
+    }
+
+    @media (min-width: 1200px) {
+      margin-left: 47px;
+    }
+
+    @media (max-width: 576px) {
+      margin: 5px 10px 5px 0;
+    }
+
+    &:focus {
+      color: $red;
+    }
+
+    &:hover {
+      color: $red;
+
+      @media (max-width: $desktop-sm) {
+        color: $gray4;
+      }
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &.active {
+      color: $red;
+    }
+  }
+}
+
+.page--product {
+  .content-nav {
+    flex-wrap: wrap;
+  }
+}

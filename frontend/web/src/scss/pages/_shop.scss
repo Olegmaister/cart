@@ -1,0 +1,183 @@
+.p-shops {
+	
+	&-info {
+		margin-bottom: 40px;
+	}
+	
+	&-content {
+		display: flex;
+	}
+	
+	&-col {
+		
+		&--left {
+			width: 40%;
+		}
+		
+		&--right {
+			width: 60%;
+			padding-left: 20px;
+		}
+		
+	}
+	
+	&-accordion {
+		display: flex;
+		margin-top: 15px;
+		
+		&-row {
+			margin-bottom: 10px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+		}
+		
+		&-media {
+			
+			&__img {
+				margin-bottom: 8px;
+				height: 170px;
+				
+				img {
+					display: block;
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+				
+			}
+			
+			&-but {
+				display: flex;
+				justify-content: center;
+				margin-top: -35px;
+			}
+			
+		}
+		
+		.desc-accord-cont {
+			padding-top: 10px;
+		}
+		
+	}
+	
+	&-adress {
+		border-top: 2px solid $black2;
+		padding-top: 15px;
+		
+		&-wrap {
+			padding: 0 25px;
+		}
+		
+		&-col {
+
+			&--left {
+			
+			}
+			
+			&--right {
+				//padding-left: 20px;
+				padding-top: 20px;
+				display: flex;
+        flex-wrap: wrap;
+
+				.p-shops-accordion-row {
+					width: 100%;
+					flex: 0 0 100%;
+
+					@media (min-width: 400px) {
+						width: 50%;
+						flex: 0 0 50%;
+					}
+				}
+			}
+		}
+		
+		&__title {
+			font-family: 'Roboto',sans-serif;
+			font-style: normal;
+			font-weight: bold;
+			font-size: 14px;
+			line-height: 147%;
+			color: $black2;
+			
+			margin-bottom: 13px;
+		}
+		
+		&-inner {
+			font-family: 'Roboto',sans-serif;
+			font-style: normal;
+			font-size: 16px;
+			line-height: 147%;
+			color: $black2;
+			
+			a,p {
+				font-family: 'Roboto',sans-serif;
+				font-style: normal;
+				font-weight: normal;
+				font-size: 16px;
+				line-height: 147%;
+				color: $black2;
+				
+				display: block;
+			}
+			
+			a {
+				@include transition();
+				
+				&:hover {
+					color: $red;
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+	&-map {
+		height: 980px;
+	}
+	
+	&-but-3d {
+		display: inline-flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		background-color: $red;
+		min-width: 80px;
+		min-height: 66px;
+		padding: 10px;
+		cursor: pointer;
+		transition: background .2s;
+
+		&:hover {
+			background: #000;
+		}
+		
+		&__icon {
+			width: 33px;
+			height: 20px;
+			display: block;
+		}
+		
+		&__txt {
+			margin-top: 8px;
+			
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 147%;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			color: $white;
+		}
+	}
+	
+}
+
+.p-shop-location input {
+	position: absolute;
+	top: -9999px;
+}

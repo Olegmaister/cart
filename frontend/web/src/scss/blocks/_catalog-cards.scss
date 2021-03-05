@@ -1,0 +1,17 @@
+.catalog-cards {
+
+  & .card-more-but {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    padding-left: 20px;
+   @media (max-width: $tablet-md-sl) {
+     padding-left: 10px;
+     .btn {
+       width: 100%;
+     }
+   }
+  }
+}

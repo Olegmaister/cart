@@ -1,0 +1,154 @@
+.p-contacts {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 75px;
+	margin-left: -25px;
+	
+	@media (max-width: $tablet-md-sl) {
+		margin-left: 0;
+		margin-top: 40px;
+		flex-direction: column;
+	}
+	
+	&-head {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		
+		.title {
+			margin-bottom: 0;
+		}
+		
+		@media (max-width: $tablet-md-sl) {
+			flex-direction: column;
+			
+			.btn {
+				margin-top: 40px;
+			}
+		}
+		
+		@media (max-width: $tablet-md-s) {
+			align-items: inherit;
+			
+			.btn {
+				width: 100%;
+			}
+		}
+		
+	}
+	
+	&-item {
+		width: 50%;
+		padding-left: 25px;
+		margin-bottom: 10px;
+		
+		@media (max-width: $tablet-md-sl) {
+			width: 100%;
+			padding-left: 0;
+			margin-bottom: 25px;
+			
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		
+		@media (max-width: $tablet-md-s) {
+			margin-bottom: 10px;
+		}
+		
+		&-head {
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 147%;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			color: $red;
+			
+			border-bottom: 2px solid $gray5;
+			padding-bottom: 15px;
+			
+			@media (max-width: $tablet-md-s) {
+				font-size: 12px;
+			}
+		}
+		
+		&-inner {
+			display: flex;
+			flex-wrap: wrap;
+			padding: 20px 0;
+			
+			@media (max-width: $tablet-md-s) {
+				padding-bottom: 0;
+				padding-top: 15px;
+			}
+			
+		}
+		
+		&-col {
+			width: 50%;
+			margin-bottom: 35px;
+			padding-right: 10px;
+			
+			font-family: $font-second;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 16px;
+			line-height: 147%;
+			color: $black2;
+			
+			@media (max-width: $tablet-md-s) {
+				font-size: 12px;
+				margin-bottom: 20px;
+			}
+			
+			&__title {
+				font-family: $font-second;
+				font-style: normal;
+				font-weight: bold;
+				font-size: 14px;
+				line-height: 147%;
+				color: $black2;
+				
+				margin-bottom: 15px;
+				
+				@media (max-width: $tablet-md-s) {
+					font-size: 10px;
+					margin-bottom: 10px;
+				}
+				
+				
+			}
+			
+			a,p {
+				font-family: $font-second;
+				font-style: normal;
+				font-weight: normal;
+				font-size: 16px;
+				line-height: 147%;
+				color: $black2;
+				
+				display: block;
+				
+				@media (max-width: $tablet-md-s) {
+					font-size: 12px;
+				}
+				
+			}
+			
+			a {
+				@include transition();
+				
+				&:hover {
+					color: $red;
+				}
+			}
+			
+			&__adress {
+				max-width: 155px;
+			}
+			
+		}
+		
+	}
+	
+}

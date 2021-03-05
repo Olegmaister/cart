@@ -1,0 +1,146 @@
+/*
+*   Компоненты для типографики, можно использовать не только для заголовков
+*   title-h1 - размер
+*   title--black - цвет текста
+*/
+
+.title {
+
+  // Размер
+  &-h1 {
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    @include adaptiv-font(64, 28);
+    line-height: 125%;
+    text-transform: uppercase;
+  }
+
+  &-h2 {
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    line-height: 142%;
+    text-transform: uppercase;
+    @include adaptiv-font(28, 24);
+  }
+
+  &-h3 {
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+    @include adaptiv-font(22, 18);
+    line-height: 147%;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  &-h4 {
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+    @include adaptiv-font(16, 12);
+    line-height: 147%;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  &-h5 {
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    @include adaptiv-font(14, 12);
+    line-height: 120%;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  &-h6 {
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+    @include adaptiv-font(12, 10);
+    line-height: 132%;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  // Цвет
+  &--white {
+    color: $white;
+  }
+
+  &--black {
+    color: $black;
+  }
+
+  &--black2 {
+    color: $black2;
+  }
+
+  &--red {
+    color: $red;
+  }
+  &--page {
+    margin-bottom: 25px;
+  }
+  &--page-lg {
+    margin-bottom: 60px;
+  }
+}
+
+
+
+.text {
+
+  // размер
+  &-medium {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    @include adaptiv-font(14, 12);
+    line-height: 147%;
+  }
+
+
+  // Цвет
+  &--red {
+    color: $red;
+  }
+
+  &--gray4 {
+    color: $gray4;
+  }
+
+  &--gray6 {
+    color: $gray6;
+  }
+
+  &--black2 {
+    color: $black2;
+  }
+
+
+  // Оформление подчеркивания
+  &--dashed {
+
+    &-red {
+      display: inline-block;
+      background-image: linear-gradient(to right, $red 80%, transparent 20%);
+      background-position: 0 1.2em;
+      background-repeat: repeat-x;
+      background-size: 22px 1px;
+    }
+
+    &-black2 {
+      display: inline-block;
+      background-image: linear-gradient(to right, $black2 80%, transparent 20%);
+      background-position: 0 1.2em;
+      background-repeat: repeat-x;
+      background-size: 22px 1px;
+    }
+  }
+
+
+  // Позиционирование
+  &-center {
+    text-align: center;
+  }
+
+
+}

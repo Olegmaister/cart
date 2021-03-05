@@ -1,0 +1,42 @@
+.paginations {
+	display: flex;
+	margin-left: -18px;
+	margin-bottom: 20px;
+	
+	li {
+		border-left: 2px solid $gray5;
+		
+		&:first-child {
+			border: none;
+			display: none;
+		}
+		
+		&:last-child {
+			display: none;
+		}
+		
+		a {
+			padding: 0 18px;
+			display: block;
+			
+			color: $gray4;
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 147%;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			
+			@media (max-width: $mobile-md) {
+				padding: 0 15px;
+				font-size: 14px;
+			}
+		}
+		
+		&:hover,
+		&.active {
+			a {
+				color: $red;
+			}
+		}
+	}
+}

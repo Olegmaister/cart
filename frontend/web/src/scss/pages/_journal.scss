@@ -1,0 +1,386 @@
+// На главной
+.journal {
+  background-color: $bg;
+  padding: 80px 0 50px 0;
+
+  @media (max-width: $tablet-md-s) {
+    padding: 56px 0 24px 0;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+
+    @media (max-width: $tablet-md-s) {
+      margin-bottom: 14px;
+    }
+  }
+
+  &-content__nav {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 34px;
+
+    @media (max-width: $tablet-md-s) {
+      margin-bottom: 20px;
+      width: 100%;
+      overflow-x: auto;
+    }
+  }
+
+  &-content > .pg-row {
+
+    @media (max-width: $tablet-md-s) {
+      margin-left: 0;
+  
+      .pg-col-md-s-100 {
+        padding-left: 0;
+      }
+      
+    }
+    
+  }
+
+  &-content__btn {
+    position: absolute;
+    top: -94px;
+    right: 0;
+
+    @media (max-width: $tablet-lg) {
+      position: static;
+      display: flex;
+      justify-content: center;
+    }
+
+    & button {
+
+      @media (max-width: $mobile-lg) {
+        width: 100%;
+      }
+    }
+  }
+
+  &-content-wrapper {
+    position: relative;
+  }
+
+  &-card {
+
+    @media (max-width: $desktop-sm) {
+      padding-bottom: 20px;
+    }
+  }
+}
+
+
+// Превьюхи статей в боковой колонке
+.journal-rev {
+
+  &-top {
+    height: 188px;
+    width: 100%;
+    position: relative;
+  }
+
+  &-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &-tags {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    padding: 0 20px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-top: 4px;
+  }
+
+  &-bot {
+    padding: 30px 18px 20px;
+    background-color: $white;
+
+    &-row {
+      display: flex;
+      justify-content: space-between;
+
+      & + & {
+        margin-top: 10px;
+        align-items: center;
+      }
+    }
+  }
+
+  &__name {
+    flex: 1 1 0;
+  }
+
+  &__label {
+    background-color: $red;
+    display: inline-block;
+    padding: 4px 10px;
+    color: $white;
+    text-transform: uppercase;
+    align-self: flex-start;
+  }
+
+  &__date {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 132%;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $gray11;
+  }
+
+
+}
+
+
+
+// Страница журнала
+.p-journal {
+
+	&-top {
+    display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+    @media (max-width: $tablet-md-s) {
+      flex-wrap: wrap;
+    }
+
+    &-col--right {
+
+      @media (max-width: $tablet-md-s) {
+        width: 100%;
+      }
+
+      & .btn--lxx {
+
+        @media (max-width: $tablet-md-s) {
+          margin-top: 30px;
+          width: 100%;
+        }
+      }
+    }
+	}
+
+
+
+	&-content {
+		margin-top: 45px;
+	}
+
+	&-main {
+		display: flex;
+	}
+
+	&-tabs {
+		margin-top: 45px;
+
+		&-nav {
+			margin-bottom: 15px;
+			padding-bottom: 10px;
+
+			@media (max-width: $tablet-sm) {
+				max-width: 100%;
+				overflow-x: auto;
+			}
+		}
+
+		&-content {
+			flex-direction: column;
+		}
+	}
+
+  &__btn {
+    width: 258px;
+    margin: 40px auto 0;
+
+    @media (max-width: $mobile-lg) {
+      width: 100%;
+      margin: 20px auto 0;
+    }
+
+    & .btn__inner {
+      @media (max-width: $mobile-lg) {
+        font-size: 14px;
+      }
+    }
+  }
+
+
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 20px;
+
+    // модификация карточек на страниц журнала - НАчАЛО
+    & .journal-card {
+
+      @media (max-width: $desktop-sm) {
+        padding-bottom:0;
+      }
+    }
+
+    & .journal-card__img-link {
+      height: 128px;
+
+      @media (max-width: $desktop-sm) {
+        height: 385px;
+      }
+
+      @media (max-width: $tablet-md-s) {
+        height: 180px;
+      }
+    }
+
+    & .journal-card__info {
+      padding: 28px 18px 20px;
+
+      @media (max-width: $mobile-lg) {
+        padding: 18px 12px 14px 14px;
+      }
+    }
+
+    & .journal-card__info-header {
+      margin-bottom: 12px;
+    }
+
+    & .journal-card__tags {
+      right: 18px;
+      bottom: 10px;
+
+      @media (max-width: $mobile-lg) {
+        right: 11px;
+        bottom: 9px;
+      }
+    }
+
+    & .journal-card {
+
+      @media (max-width: $desktop-sm) {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+
+      @media (max-width: $mobile-lg) {
+        grid-column: span 4;
+        grid-row: span 4;
+      }
+    }
+
+    // Большая карточка с лева
+    & .journal-card:nth-child(14n + 1),
+    & .journal-card:nth-child(14n + 11) {
+      grid-column: span 1;
+      grid-row: span 2;
+
+      @media (max-width: $desktop-sm) {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+
+      @media (max-width: $mobile-lg) {
+        grid-column: span 4;
+        grid-row: span 4;
+      }
+
+      & .journal-card__img-link {
+        height: 385px;
+
+        @media (max-width: $tablet-md-s) {
+          height: 180px;
+        }
+      }
+    }
+  }
+}
+
+
+// На странице О нас
+.p-about-arhive-content-col {
+
+  & .journal-card__img-link {
+    height: 160px;
+  }
+
+  & .journal-card__info {
+    padding: 24px 14px 18px 16px;
+  }
+
+  & .journal-card__info-header {
+    margin-bottom: 18px;
+  }
+}
+
+.js-blog-nav {
+  display: flex;
+  align-items: center;
+
+  .slick-arrow {
+    width: 26px;
+    height: 26px;
+    transform: none;
+    position: relative;
+    left: 0;
+    right: 0;
+    text-indent: 0;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 13px;
+      height: 13px;
+      top: 4px;
+      left: 4px;
+      border-right: 2px solid #000;
+      border-bottom: 2px solid #000;
+    }
+  }
+
+  .slick-prev {
+    margin-right: 10px;
+    transform: rotate(-225deg);
+  }
+  .slick-next {
+    margin-left: 10px;
+    transform: rotate(-45deg);
+  }
+
+  .slick-slide {
+    color: #8b8b8b;
+    font-weight: bold;
+    font-size: 16px;
+    padding-right: 20px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color .2s;
+
+    &.active,
+    &:hover {
+      color: $red;
+    }
+
+    @include min(1200) {
+      font-size: 18px;
+    }
+    @include min(1400) {
+      padding-right: 60px;
+    }
+  }
+}
+
+.all-posts-btn {
+  @include max(768) {
+    width: 100%;
+  }
+}

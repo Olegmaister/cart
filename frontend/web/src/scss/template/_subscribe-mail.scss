@@ -1,0 +1,123 @@
+/*================================================================================
+                                    FORM SUBSCRIBE MAIL                                     
+================================================================================*/
+.subscribe-mail {
+	background-color: $black2;
+	padding: 35px 0;
+	.wrapper {
+		display: flex;
+	}
+	&__txt {
+		color: $white;
+		font-size: 28px;
+		line-height: 142%;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		padding-left: 121px;
+	}
+}
+.subscribe-mail-col {
+	width: 50%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	&_left {
+
+	}
+	&_right {
+		padding-left: 7px;
+		display: flex;
+		width: 100;
+		align-items: center;
+	}
+}
+.subscribe-mail-icon {
+	width: 43px;
+	height: 33px;
+	position: absolute;
+	left: 48px;
+	top: 0;
+	bottom: 0;
+    margin: auto 0; 
+	img {
+		display: block;
+	}
+}
+/*================================================================================
+                                    ADAPTS                                     
+================================================================================*/
+@media (max-width: $desktop-lg) {
+	.subscribe-mail {
+		&__txt {
+			font-size: 21px;
+			padding-left: 80px;
+		}
+		&-icon {
+			left: 5px;
+		}
+	}
+}
+@media (max-width: 1279px) {
+	.subscribe-mail {
+		&__txt {
+			font-size: 18px;
+		}
+	}
+}
+@media (max-width: 768px) {
+	.subscribe-mail-col {
+		&_left {
+			width: 40%;
+		}
+		&_right {
+			width: 60%;
+		}
+	}
+	.subscribe-mail-icon {
+		left: 0;
+	}
+	.subscribe-mail__txt {
+		font-size: 11px;
+		padding-left: 59px;
+	}
+}
+@media (max-width: 767px) {
+	.subscribe-mail__txt {
+        font-size: 15px;
+         padding-left: 60px;
+    }
+    .subscribe-mail-icon {
+        left: 0;
+        width: 35px;
+        height: 27px;
+    }
+    .subscribe-mail-icon img {
+        width: 100%;
+    }
+}
+@media (max-width: 766px) {
+	.subscribe-mail {
+		padding: 43px 0 46px;
+	}
+	.subscribe-mail__txt {
+		padding-left: 74px;
+		font-size: 11px;
+		line-height: 17px;
+	}
+	.subscribe-mail .wrapper {
+		flex-direction: column;
+	}
+	.subscribe-mail-col {
+		width: 100%;
+		&_left {
+			margin-bottom: 27px;
+		}
+		&_right {
+			padding-left: 0;
+		}
+	}
+	.subscribe-mail-icon {
+		width: 44px;
+		height: 34px;
+	}
+}//x766

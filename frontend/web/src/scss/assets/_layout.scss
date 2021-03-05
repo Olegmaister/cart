@@ -1,0 +1,205 @@
+/*
+pg - ProfGroup - приставка для классов, что бы другие css фреймворки не перебили стили в случае чего
+
+*/
+
+.pg-wrapper {
+  width: 100%;
+  padding-left: calc( (100% - 1400px) / 2 );
+  padding-right: calc( (100% - 1400px) / 2 );
+
+  @media (max-width: $desktop-lg-sm) {
+    padding-left: calc( (100% - 1300px) / 2 );
+    padding-right: calc( (100% - 1300px) / 2 );
+  }
+
+  @media (max-width: $desktop-md) {
+    padding-left: calc( (100% - 1220px) / 2 );
+    padding-right: calc( (100% - 1220px) / 2 );
+  }
+
+  @media (max-width: $desktop-sm) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media (max-width: $tablet-sm) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.pg-d-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pg-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -20px;
+}
+
+.pg-justify-space-between {
+  justify-content: space-between;
+}
+
+.pg-justify-center {
+  justify-content: center;
+}
+
+
+/*
+*   Циклы создают классы для колонок pg-col-5, pg-col-10, pg-col-15, pg-col-20 ...
+*
+*   Числа в классах означают %, который они занимают от родительского блока 5%, 10% и тд
+*
+*   Классы имеют отстут с лева 20 px, а класс pg-row имеет отрицательный левый марджин,
+*   что бы схлопнуть отступ у колонок по схеме бутстрапа.
+*   НЕ СТОИТ ИСПОЛЬЗЫВАТЬ КОЛОНКИ ВНЕ блока pg-row, если только вы не зададите
+*   отрицательный марджин так же для родительского блока
+*/
+
+// Десктоп
+.pg-col-33 {
+  padding-left: 20px;
+  width: 33.33%;
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+}
+
+@for $i from 1 through 10 {
+  .pg-col-#{$i}0 {
+    padding-left: 20px;
+    flex: 0 0 10%*$i;
+    max-width: 10%*$i;
+  }
+}
+
+@for $i from 1 through 9 {
+  .pg-col-#{$i * 10 - 5} {
+    padding-left: 20px;
+    flex: 0 0 10%*$i - 5%;
+    max-width: 10%*$i - 5%;
+  }
+}
+
+// Десктоп 1279
+@media (max-width: $desktop-sm) {
+  @for $i from 1 through 10 {
+    .pg-col-lg-#{$i}0 {
+      padding-left: 20px;
+      flex: 0 0 10%*$i;
+      max-width: 10%*$i;
+    }
+  }
+
+  @for $i from 1 through 9 {
+    .pg-col-lg-#{$i * 10 - 5} {
+      padding-left: 20px;
+      flex: 0 0 10%*$i - 5%;
+      max-width: 10%*$i - 5%;
+    }
+  }
+}
+
+
+// Планшет 1023px
+@media (max-width: $tablet-lg) {
+  @for $i from 1 through 10 {
+    .pg-col-md-#{$i}0 {
+      padding-left: 20px;
+      flex: 0 0 10%*$i;
+      max-width: 10%*$i;
+    }
+  }
+
+  @for $i from 1 through 9 {
+    .pg-col-md-#{$i * 10 - 5} {
+      padding-left: 20px;
+      flex: 0 0 10%*$i - 5%;
+      max-width: 10%*$i - 5%;
+    }
+  }
+  .pg-col-md-33 {
+    width: 33.33%;
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+  }
+}
+
+//$tablet-md-s: 600px;
+@media (max-width: $tablet-md-s) {
+  @for $i from 1 through 10 {
+    .pg-col-md-s-#{$i}0 {
+      padding-left: 20px;
+      flex: 0 0 10%*$i;
+      max-width: 10%*$i;
+    }
+  }
+  
+  @for $i from 1 through 9 {
+    .pg-col-md-s-#{$i * 10 - 5} {
+      padding-left: 20px;
+      flex: 0 0 10%*$i - 5%;
+      max-width: 10%*$i - 5%;
+    }
+  }
+}
+
+//$tablet-sm: 599px;
+@media (max-width: $tablet-sm) {
+  @for $i from 1 through 10 {
+    .pg-col-sm-#{$i}0 {
+      padding-left: 20px;
+      flex: 0 0 10%*$i;
+      max-width: 10%*$i;
+    }
+  }
+  
+  @for $i from 1 through 9 {
+    .pg-col-sm-#{$i * 10 - 5} {
+      padding-left: 20px;
+      flex: 0 0 10%*$i - 5%;
+      max-width: 10%*$i - 5%;
+    }
+  }
+}
+
+//$mobile-md: 375px;
+@media (max-width: $mobile-md) {
+  @for $i from 1 through 10 {
+    .pg-col-sms-#{$i}0 {
+      padding-left: 20px;
+      flex: 0 0 10%*$i;
+      max-width: 10%*$i;
+    }
+  }
+
+  @for $i from 1 through 9 {
+    .pg-col-sms-#{$i * 10 - 5} {
+      padding-left: 20px;
+      flex: 0 0 10%*$i - 5%;
+      max-width: 10%*$i - 5%;
+    }
+  }
+}
+
+//$mobile-sm: 350px;
+@media (max-width: $mobile-sm) {
+  @for $i from 1 through 10 {
+    .pg-col-smxs-#{$i}0 {
+      padding-left: 20px;
+      flex: 0 0 10%*$i;
+      max-width: 10%*$i;
+    }
+  }
+
+  @for $i from 1 through 9 {
+    .pg-col-smxs-#{$i * 10 - 5} {
+      padding-left: 20px;
+      flex: 0 0 10%*$i - 5%;
+      max-width: 10%*$i - 5%;
+    }
+  }
+}

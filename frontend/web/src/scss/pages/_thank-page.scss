@@ -1,0 +1,50 @@
+.thank-page {
+  background-color: $bg;
+  padding-bottom: 78px;
+  text-align: center;
+  padding-top: 60px;
+
+  @media (max-width: 768px) {
+    padding-top: 160px;
+  }
+
+  &-hero {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 90px;
+    position: relative;
+    max-width: 800px;
+
+    &__bg-image {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 0;
+    }
+  }
+
+  &-title {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 30px;
+  }
+
+  &-subtitle {
+    position: relative;
+    z-index: 1;
+  }
+
+  &-btn {
+    width: 100%;
+    max-width: 334px;
+    margin: 74px auto;
+  }
+}
+
+.thank-page-products {
+
+  &__title {
+    margin-bottom: 40px;
+  }
+}

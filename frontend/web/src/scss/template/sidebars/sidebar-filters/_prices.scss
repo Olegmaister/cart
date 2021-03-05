@@ -1,0 +1,18 @@
+.filter-price {
+
+  &__values {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  &__number {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 132%;
+    color: $black2;
+  }
+}

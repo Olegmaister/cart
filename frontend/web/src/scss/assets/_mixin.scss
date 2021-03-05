@@ -1,0 +1,183 @@
+/**
+ * Всякие заготовки
+ */
+@mixin hvr_trans_2() {
+  -webkit-transition: fill .2s ease-out;
+  -moz-transition: fill .2s ease-out;
+  -o-transition: fill .2s ease-out;
+  transition: fill .2s ease-out;
+  border-bottom: 1px solid transparent;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 1px;
+    transition: width 0.15s 0.15s;
+  }
+  &:hover:after {
+    width: 100%;
+  }
+}
+
+@mixin transition() {
+  -webkit-transition: .2s ease-out;
+  -moz-transition: .2s ease-out;
+  -o-transition: .2s ease-out;
+  transition: .2s ease-out;
+}
+
+@mixin hoverimages() {
+  img {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-transition: all 0.10s linear;
+    transition: all 0.20s linear;
+  }
+  &:hover {
+    img {
+      -ms-transform: scale(1.02);
+      -webkit-transform: scale(1.02);
+      transform: scale(1.02);
+    }
+  }
+}
+
+/*
+*       Скрол бары
+*==============================*/
+// Широкий скрол бар
+@mixin scroll-bar-lg {
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: thin; // толщина скрол бара
+  scrollbar-color: $gray14 $gray; //первый цвет для ползунка, а второй для всей дорожки
+
+  &::-webkit-scrollbar {
+    width: 8px; // толщина скрол бара
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $gray; // цвет для всей дорожки
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $gray14; // цвет для ползунка
+  }
+}
+
+// Тонкий скрол бар
+@mixin scroll-bar-sm {
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: thin; // толщина скрол бара
+  scrollbar-color: $gray14 $gray; //первый цвет для ползунка, а второй для всей дорожки
+
+  &::-webkit-scrollbar {
+    width: 4px; // толщина скрол бара
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $gray; // цвет для всей дорожки
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $gray14; // цвет для ползунка
+  }
+}
+
+
+/*
+*  Удаляем возможность выбрать элемент
+*-------------------------------------------*/
+@mixin non-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/*
+*  Скрываем элемент от пользователя,
+*  но не от скрин ридера или клавиатуры
+*
+*  не возможно анимировать
+*-------------------------------------------*/
+@mixin visual-hidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(0px 0px 99.9% 99.9%);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
+  top: 50%;
+}
+
+/*
+*  Обрезаем текст и добавляем "..."
+*-------------------------------------------*/
+@mixin overflow-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/*
+*  Адаптивный текст
+*-------------------------------------------*/
+$maxWidth: 1440; // рабочая ширина макета
+@mixin adaptiv-font($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+// Приминение
+//h1{
+//	@include adaptiv-font(40, 24); // где 40 это максимальный размер и 24 это для 320 px
+//}
+
+
+@mixin media($min-query: null, $max-query: null) {
+  @if ($min-query == null and $max-query == null) {
+    @warn 'Mixin k-media() received two null values; no output';
+    @content;
+  } @else if ($max-query == null) {
+    @media screen and (min-width: $min-query+0px) {
+      @content;
+    }
+  } @else if ($min-query == null) {
+    @media screen and (max-width: $max-query+0px) {
+      @content;
+    }
+  } @else {
+    @media screen and (min-width: $min-query+0px) and (max-width: $max-query+0px) {
+      @content;
+    }
+  }
+}
+
+@mixin min($min-query) {
+  @include media($min-query, null) {
+    @content
+  }
+}
+
+@mixin max($max-query) {
+  @include media(null, $max-query - 1) {
+    @content;
+  }
+}

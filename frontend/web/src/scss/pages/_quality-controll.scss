@@ -1,0 +1,138 @@
+.p-controll {
+	
+	p {
+		font-family: $font-second;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 16px;
+		line-height: 147%;
+		color: $gray11;
+		
+		margin-bottom: 30px;
+		
+		&:last-child {
+			margin-bottom: 0;
+		}
+		
+		@media (max-width: $tablet-md) {
+			font-size: 12px;
+			line-height: 20px;
+			margin-bottom: 15px;
+		}
+		
+	}
+	
+	&-remarks {
+		background-color: $black2;
+		padding: 60px 0;
+		margin: 60px 0;
+		
+		@media (max-width: $tablet-md) {
+			padding: 30px 0;
+			margin: 30px 0;
+		}
+		
+		&-colums {
+			display: flex;
+			
+			@media (max-width: $tablet-md) {
+				flex-direction: column;
+			}
+			
+		}
+		
+		&-col {
+			
+			&--left {
+				width: 35%;
+				
+				@media (max-width: $tablet-md) {
+					width: 100%;
+				}
+				
+			}
+			
+			&--right {
+				width: 65%;
+				
+				@media (max-width: $tablet-md) {
+					width: 100%;
+				}
+				
+			}
+			
+		}
+		
+		&__title {
+			max-width: 190px;
+			
+			font-size: 28px;
+			line-height: 142%;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+			color: $white;
+			
+			@media (max-width: $tablet-md) {
+				max-width: inherit;
+				margin-bottom: 20px;
+				font-size: 18px;
+			}
+			
+		}
+		
+		&-form {
+			display: flex;
+			flex-wrap: wrap;
+			max-width: 635px;
+			
+			@media (max-width: $tablet-md) {
+				max-width: inherit;
+				flex-direction: column;
+			}
+			
+			&-col {
+				
+				&--left {
+					width: 45%;
+					
+					@media (max-width: $tablet-md) {
+						width: 100%;
+					}
+				}
+				
+				&--right {
+					width: 55%;
+					padding-left: 20px;
+					
+					@media (max-width: $tablet-md) {
+						width: 100%;
+						padding-left: 0;
+					}
+					
+					.b-field textarea {
+						height: 174px;
+					}
+					
+				}
+				
+			}
+			
+			&-row {
+				margin-bottom: 15px;
+			}
+			
+		}//form
+		
+		&__but {
+			margin-top: 15px;
+			width: 45%;
+			
+			@media (max-width: $tablet-md) {
+				width: 100%;
+			}
+			
+		}
+		
+	}//remarks
+	
+}

@@ -1,0 +1,13 @@
+.hash-tag {
+  display: inline-block;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 147%;
+  text-transform: lowercase;
+  color: $black2;
+  background-color: rgba($gray5, .8);
+  padding: 2px 4px;
+  margin-bottom: 2px;
+}

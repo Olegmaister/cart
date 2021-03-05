@@ -1,0 +1,131 @@
+.cat-slider {
+	position: relative;
+}
+.cat-slider-wrap {
+	display: flex;
+	padding: 0 30px;
+	//max-height: 95px;
+	.slick-track {
+		margin-left: 0;
+	}
+}
+.cat-slider-item {
+	margin-top: 0;
+	display: flex!important;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	&__name {
+		margin-top: 10px;
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 132%;
+		text-transform: uppercase;
+		color: $black;
+		text-align: center;
+		width: 100%;
+		max-width: 125px;
+		word-break: break-word;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+
+		@media (min-width: 576px) {
+			letter-spacing: 0.06em;
+		}
+	}
+	&:hover {
+		.cat-slider-item-media {
+			img {
+				-ms-transform:scale(1.1);
+				-webkit-transform:scale(1.1);
+				transform:scale(1.1);
+				
+				filter: grayscale(0);
+			}
+		}
+		.cat-slider-item__name {
+			color: $red;
+		}
+	}
+}
+.cat-slider-item-media {
+	max-width: 78px;
+	max-height: 78px;
+	display: flex;
+	overflow: initial;
+	padding: 5px 0;
+	@include hoverimages();
+	
+	img {
+		width: 100%;
+		height: auto;
+		display: block;
+		object-fit: contain;
+		filter: grayscale(100%);
+		filter: gray; /* IE 6-9 */
+	}
+	
+}
+.cat-slider-arrows {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	
+	display: flex;
+	align-items: center;
+	height: 100%;
+}
+.cat-slider-arrow {
+	position: absolute;
+	width: 30px;
+	height: 100%;
+	top: 0;
+	cursor: pointer;
+	z-index: 1;
+
+	&:hover {
+		&:before {
+			border-color: $red;
+		}
+	}
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: calc(50% - 7px);
+		height: 14px;
+		width: 14px;
+		border-bottom: 3px solid #717171;
+		border-left: 3px solid #717171;
+	}
+
+	&_prev {
+		left: 0;
+
+		&:before {
+			transform: rotate(45deg);
+			left: calc(50% - 4px);
+		}
+	}
+
+	&_next {
+		right: 0;
+
+		&:before {
+			transform: rotate(-135deg);
+			right: calc(50% - 4px);
+		}
+	}
+
+  @media (max-width: 768px) {
+		background-color: $red;
+
+		&:before {
+			border-color: #fff !important;
+		}
+	}
+}

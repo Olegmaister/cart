@@ -1,0 +1,116 @@
+.p-discount {
+
+	&__desc {
+		font-family: $font-second;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 168%;
+		color: $black2;
+		
+		@media (max-width: $tablet-md-s) {
+			font-size: 12px;
+		}
+		
+	}
+	
+	&-items {
+		margin-top: 60px;
+		
+		@media (max-width: $tablet-md-s) {
+			margin-top: 35px;
+		}
+		
+	}
+	
+	&-item {
+		display: flex;
+		align-items: center;
+		margin-bottom: 55px;
+		
+		@media (max-width: $tablet-md-s) {
+			margin-bottom: 25px;
+		}
+		
+		&:last-child {
+			margin-bottom: 0;
+		}
+		
+		&__procent {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			
+			min-width: 98px;
+			width: 98px;
+			height: 98px;
+			background-color: $red;
+			
+			font-size: 28px;
+			line-height: 142%;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+			color: $white;
+			
+			@media (max-width: $tablet-md-s) {
+				position: relative;
+				top: 3px;
+				min-width: 65px;
+				width: 65px;
+				height: 65px;
+				
+				font-size: 16px;
+			}
+			
+		}
+		
+		&-info {
+			padding-left: 20px;
+			
+			@media (max-width: $tablet-md-s) {
+				padding-left: 10px;
+			}
+			
+		}
+		
+		&__title {
+			font-weight: 500;
+			font-size: 30px;
+			line-height: 147%;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			color: $black;
+			
+			@media (max-width: 992px) {
+				font-size: 16px;
+			}
+			
+		}
+		
+		&__desc {
+			font-family: $font-second;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 14px;
+			line-height: 168%;
+			color: $black2;
+			text-align: justify;
+			
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+			
+			margin-top: 12px;
+			
+			@media (max-width: $tablet-md-s) {
+				display: block;
+				margin-top: 5px;
+				font-size: 12px;
+			}
+		}
+		
+	}
+
+}
